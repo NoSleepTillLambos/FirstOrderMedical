@@ -1,10 +1,22 @@
 import NavBar from './Components/NavBar';
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+import Home  from './Pages/Home';
+import Doctors from './Pages/Doctors';
+import Patients from './Pages/Patients';
+
 
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
+      <Router>
+        <NavBar/>
+        <Routes>
+          <Route path='/' exact element={<Home/>}/>
+          <Route path='/Doctors' element={<Doctors/>}/>
+          <Route path='/Patients' element={<Patients/>}/>
+        </Routes>
+      </Router>
       
     </div>
   );
