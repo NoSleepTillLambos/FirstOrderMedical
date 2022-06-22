@@ -1,8 +1,13 @@
 import React from 'react'
+import CreateUser from '../Components/CreateUser'
+
+
 
 function Doctors() {
   return (
-    <div>Doctors page</div>
+    <div>
+      <CreateUser/>
+    </div>
   )
 }
 

@@ -18,6 +18,9 @@
     top: 0;
     left: -50%;
     transition: 500ms;
+    box-shadow: 10px 10px 66px -14px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 66px -14px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 66px -14px rgba(0,0,0,0.75);
 }
 .nav-menu.active {
     left: 0;
