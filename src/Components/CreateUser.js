@@ -18,7 +18,7 @@ function CreateUser() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:8888/api/addUser.php", inputs)
+      .post("http://localhost:8888/api/addUser", inputs)
       .then(function (response) {
         console.log(response);
       })
@@ -45,25 +45,45 @@ function CreateUser() {
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="name" onChange={handleChange} />
+                <Form.Control name="name" type="name" onChange={handleChange} />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3">
                 <Form.Label>Surname</Form.Label>
-                <Form.Control type="surname" />
+                <Form.Control
+                  name="surname"
+                  type="surname"
+                  onChange={handleChange}
+                />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3">
                 <Form.Label>Contact</Form.Label>
-                <Form.Control type="contact" />
+                <Form.Control
+                  name="contact"
+                  type="number"
+                  onChange={handleChange}
+                />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3">
                 <Form.Label>Username</Form.Label>
-                <Form.Control type="Username" />
+                <Form.Control
+                  name="username"
+                  type="Username"
+                  onChange={handleChange}
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="Password" />
+                <Form.Control
+                  name="password"
+                  type="password"
+                  onChange={handleChange}
+                />
               </Form.Group>
-              <Button variant="success btn-block" type="submit">
+              <Button
+                variant="success btn-block"
+                type="submit"
+                onClick={handleSubmit}
+              >
                 Register user
               </Button>
             </Form>

@@ -1,5 +1,6 @@
 import "../CSS/Home.css";
 import React from "react";
+import { FaBriefcaseMedical } from "react-icons/fa";
 
 function Home() {
   return (
@@ -13,7 +14,9 @@ function Home() {
       </div>
 
       <div className="doctors">
-        <h4>Doctors on shift today</h4>
+        <h4>
+          Psychologists on shift today <FaBriefcaseMedical />
+        </h4>
       </div>
 
       <div className="logged-receptionist">
