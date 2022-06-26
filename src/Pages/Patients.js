@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import "../CSS/Patients.css";
 
 function Patients() {
   return (
-    <div>Patients page</div>
-  )
+    <>
+      <h2>Patients</h2>
+
+      <div className="patient-section">hi</div>
+    </>
+  );
 }
 
-export default Patients
+export default Patients;

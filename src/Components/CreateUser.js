@@ -3,29 +3,39 @@ import { useState } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import "../CSS/Login.css";
 import axios from "axios";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function CreateUser() {
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState({
+    first: "",
+    last: "",
+    email: "",
+    contact: "",
+    username: "",
+    password: "",
+    passwordCon: "",
+  });
 
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+  const navigate = useNavigate();
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
 
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
     axios
-      .post("http://localhost:8888/api/addUser", inputs)
+      .post("http://localhost:80/api/addUser.php", inputs)
       .then(function (response) {
         console.log(response);
       })
       .catch((e) => {
         console.log(e);
       });
-
     console.log(inputs);
   };
 
