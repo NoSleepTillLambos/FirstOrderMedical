@@ -9,7 +9,7 @@ function Home() {
       <div className="home-element">
         <h2>
           {/* when user is logged in, name will pop up with a welcome message and give them full access to the site */}
-          Welcome Mrs:....
+          Appointments for today
         </h2>
       </div>
 
