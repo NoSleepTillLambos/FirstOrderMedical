@@ -24,7 +24,7 @@ function Home() {
       </div>
 
       <div className="logged-receptionist">
-        <h4>Appointments for the day</h4>
+        <h4></h4>
       </div>
     </>
   );
