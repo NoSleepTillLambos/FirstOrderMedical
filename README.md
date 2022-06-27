@@ -1,4 +1,4 @@
-<!-- Repository Information & Links-->
+Repository Information & Links
 <br />
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/MikeMaynard14/termoneexample)
@@ -9,37 +9,18 @@
 <!-- HEADER SECTION -->
 <h5 align="center" style="padding:0;margin:0;">Liam Wedge</h5>
 <h5 align="center" style="padding:0;margin:0;">21100218</h5>
-<h6 align="center">DV200 - Term 1 Project | 2022</h6>
+<h6 align="center">DV200 - Term 2 Project | 2022</h6>
 </br>
 <p align="center">
-
-  <a href="https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project">
-<<<<<<< HEAD
-    <img href="public/unnamed.jpg" alt="Logo" width="140" height="140">
-=======
-    <img src="public/unnamed.jpg" alt="Logo" width="140" height="140">
->>>>>>> d9b9e73abaaa45a73b0ec9fa40d7e8bb111fa374
-  </a>
   
-  <h3 align="center">Algo crypt</h3>
-
-  <p align="center">
-    A react project using the CoinLore API to explore the abilities of and data visualization of charts js  <br>
-    
-    
-   <br />
-   <br />
-   <a href="https://drive.google.com/drive/folders/1IiMC4ZpDRhs8Q5RuAk9rlZmzaHfeihNa">View Demo</a>
-    ·
-    <a href="https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project/issues">Report Bug</a>
-    ·
+  <h3 align="center">First order medical</h3>
     
 </p>
 <!-- TABLE OF CONTENTS -->
 
 ## Table of Contents
 
-- [About the Project](The project is centred around the cryptocurrency ecosystem and was run and developed through the use of REACT JS and was)
+- [About the Project](The project is centred around php and MySQL)
   - [Project Description](The project was designed to help the receptionists maintain and navigate the site)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -50,11 +31,9 @@
   - [Wireframes](#wireframes)
   - [Custom UI](#user-flow)
 - [Development Process](#development-process)
-  - [Implementation Process](#implementation-process) - [Highlights](The highlight was seeing all the plans come together with regards to the Ui and finally getting the API to work with the charts) - [Challenges](My greatest challenge this term was getting familiar with React syntax, it proved to be a real pain in the beginning.
-    Axios and getting data from the api
-    Time management proved to be an issue towards the end and something i need to work on in the following weeks and months to maximise my productivity
-    )
+
   - [Future Implementation](#peer-reviews)
+
 - [Final Outcome](#final-outcome)
   - [Mockups](#mockups)
   - [Video Demonstration](#video-demonstration)
