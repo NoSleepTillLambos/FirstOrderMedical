@@ -11,6 +11,9 @@
   margin-top: 2px;
   margin-left: 120px;
 }
+.logo {
+  float: left;
+}
 h2,
 h4 {
   padding: 15px;

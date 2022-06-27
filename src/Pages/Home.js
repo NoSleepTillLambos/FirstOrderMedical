@@ -1,11 +1,15 @@
 import "../CSS/Home.css";
 import React from "react";
 import { FaBriefcaseMedical } from "react-icons/fa";
+import icon from "../Assets/FaviconPNG.png";
 
 function Home() {
   return (
     <>
-      <h1 className="home-title">Peace of mind</h1>
+      <h1 className="home-title">
+        First order<img src={icon} alt="icon" className="logo"></img>
+      </h1>
+
       <div className="home-element">
         <h2>
           {/* when user is logged in, name will pop up with a welcome message and give them full access to the site */}
