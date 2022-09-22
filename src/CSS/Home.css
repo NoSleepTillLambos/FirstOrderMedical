@@ -7,12 +7,11 @@
   font-family: "Raleway", sans-serif;
 }
 .home-title {
-  margin-bottom: 60px;
   margin-top: 2px;
   margin-left: 120px;
 }
 .logo {
-  float: left;
+  margin-left: 100px;
 }
 h2,
 h4 {
@@ -22,23 +21,23 @@ h4 {
 }
 .home-element {
   height: 60vh;
-  width: 500px;
-  margin-left: 120px;
+  width: 80%;
+  margin-left: 100px;
   background-color: #248bfb;
   border-radius: 5px;
   color: white;
-  float: left;
   font-family: Arial, Helvetica, sans-serif;
   box-shadow: 10px 10px 66px -14px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 10px 66px -14px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 66px -14px rgba(0, 0, 0, 0.75);
 }
-.doctors {
+.psych {
   float: left;
   background-color: #248bfb;
   height: 30vh;
   width: 500px;
-  margin-left: 50px;
+  margin-top: 30px;
+  margin-left: 100px;
   border-radius: 5px;
   color: white;
   box-shadow: 10px 10px 66px -14px rgba(0, 0, 0, 0.75);
@@ -46,8 +45,8 @@ h4 {
   -moz-box-shadow: 10px 10px 66px -14px rgba(0, 0, 0, 0.75);
 }
 .logged-receptionist {
-  height: 25vh;
-  width: 500px;
+  height: 30vh;
+  width: 575px;
   border-radius: 5px;
   margin-top: 5vh;
   background-color: #248bfb;

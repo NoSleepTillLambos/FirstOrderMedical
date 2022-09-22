@@ -1,14 +1,13 @@
 import "../CSS/Home.css";
 import React from "react";
 import { FaBriefcaseMedical } from "react-icons/fa";
-import icon from "../Assets/FaviconPNG.png";
+import icon from "../Assets/ProjectLogo1.png";
 
 function Home() {
   return (
     <>
-      <h1 className="home-title">
-        First order<img src={icon} alt="icon" className="logo"></img>
-      </h1>
+      <img src={icon} alt="icon" className="logo"></img>
+      <h1 className="home-title"></h1>
 
       <div className="home-element">
         <h2>
@@ -17,7 +16,7 @@ function Home() {
         </h2>
       </div>
 
-      <div className="doctors">
+      <div className="psych">
         <h4>
           Psychologists on shift today <FaBriefcaseMedical />
         </h4>

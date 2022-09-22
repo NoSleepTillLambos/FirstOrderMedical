@@ -1,3 +1,59 @@
 body {
   background-color: white;
 }
+/* Login Page Styling */
+.login {
+  width: 100%;
+  height: 90vh;
+}
+
+.login p {
+  margin: 0;
+}
+
+/* Login form */
+.loginForm {
+  width: 35%;
+  height: 100vh;
+  float: left;
+  text-align: center;
+}
+
+.loginLogo {
+  width: 100px;
+  height: 100px;
+  padding: 10%;
+  margin: 0 auto;
+  margin-top: 20%;
+  background-image: url("../Assets/ProjectLogo1.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.loginForm input {
+  width: 55%;
+  margin-bottom: 3%;
+}
+
+.loginForm p {
+  margin: 0;
+  color: #9a9a9a;
+  text-decoration: underline #9a9a9a 1px solid;
+  cursor: pointer;
+}
+
+/* Login Img */
+.loginImg {
+  width: 50%;
+  margin-left: 100px;
+  height: 80vh;
+  background-image: url("../Assets/image-removebg-preview.png");
+  background-size: cover;
+  float: left;
+}
+
+.passwordShow {
+  margin-top: -3.3%;
+  position: absolute;
+  margin-left: 24%;
+}
