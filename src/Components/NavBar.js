@@ -5,7 +5,6 @@ import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
-import icon from "../Assets/ProjectLogo1.png";
 
 function NavBar() {
   const [sidebar, setSidebar] = useState(false);

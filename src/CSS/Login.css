@@ -1,6 +1,9 @@
 body {
   background-color: white;
 }
+h1 {
+  font-size: x-large;
+}
 /* Login Page Styling */
 .login {
   width: 100%;
@@ -20,8 +23,8 @@ body {
 }
 
 .loginLogo {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   padding: 10%;
   margin: 0 auto;
   margin-top: 20%;
@@ -33,6 +36,7 @@ body {
 .loginForm input {
   width: 55%;
   margin-bottom: 3%;
+  margin-left: 100px;
 }
 
 .loginForm p {
@@ -41,7 +45,11 @@ body {
   text-decoration: underline #9a9a9a 1px solid;
   cursor: pointer;
 }
-
+#btn-login {
+  margin-left: 0px;
+  height: 50px;
+  margin: 3%;
+}
 /* Login Img */
 .loginImg {
   width: 50%;

@@ -6,7 +6,6 @@ import icon from "../Assets/ProjectLogo1.png";
 function Home() {
   return (
     <>
-      <img src={icon} alt="icon" className="logo"></img>
       <h1 className="home-title"></h1>
 
       <div className="home-element">

@@ -21,7 +21,7 @@ h4 {
 }
 .home-element {
   height: 60vh;
-  width: 80%;
+  width: 89%;
   margin-left: 100px;
   background-color: #248bfb;
   border-radius: 5px;
@@ -39,6 +39,7 @@ h4 {
   margin-top: 30px;
   margin-left: 100px;
   border-radius: 5px;
+  margin-bottom: 5rem;
   color: white;
   box-shadow: 10px 10px 66px -14px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 10px 66px -14px rgba(0, 0, 0, 0.75);

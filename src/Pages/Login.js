@@ -88,7 +88,7 @@ function Login() {
       <form>
         <div className="loginForm">
           <div className="loginLogo"></div>
-          <h1>Welcome Back!</h1>
+          <h1>Welcome to First Order!</h1>
           <input
             name="email"
             type="text"
@@ -107,7 +107,7 @@ function Login() {
             {passwordType === "password" ? <p>show</p> : <p>hide</p>}
           </div>
           <a href="/EditLanding" onClick={handleSubmit}>
-            <Button>Login!</Button>
+            <Button id="btn-login">Login!</Button>
           </a>
           {/* <a href=""><p>Forgot Passowrd.</p></a> */}
           <a href="/Register">
