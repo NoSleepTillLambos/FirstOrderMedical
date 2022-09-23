@@ -1,0 +1,11 @@
+.email-reg {
+  margin: auto;
+  width: 50%;
+}
+.password-reg {
+  margin: auto;
+  width: 50%;
+}
+#submit-reg {
+  height: 50px;
+}

@@ -17,7 +17,7 @@ h1 {
 /* Login form */
 .loginForm {
   width: 35%;
-  height: 100vh;
+  height: 50vh;
   float: left;
   text-align: center;
 }
@@ -25,9 +25,8 @@ h1 {
 .loginLogo {
   width: 120px;
   height: 120px;
-  padding: 10%;
   margin: 0 auto;
-  margin-top: 20%;
+  margin-top: 10%;
   background-image: url("../Assets/ProjectLogo1.png");
   background-position: center;
   background-size: cover;
@@ -54,8 +53,8 @@ h1 {
 .loginImg {
   width: 50%;
   margin-left: 100px;
-  height: 80vh;
-  background-image: url("../Assets/image-removebg-preview.png");
+  height: 70vh;
+  background-image: url("../Assets/loginimage.png");
   background-size: cover;
   float: left;
 }

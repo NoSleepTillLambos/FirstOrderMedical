@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Doctors from "./Pages/Doctors";
 import Patients from "./Pages/Patients";
 import LoginButton from "./Components/LoginButton";
+import Register from "./Pages/Register";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/Doctors" element={<Doctors />} />
           <Route path="/Patients" element={<Patients />} />
+          <Route path="/Register" element={<Register />} />
         </Routes>
       </Router>
     </div>

@@ -1,6 +1,5 @@
 <?php
 
-
 include 'db_connection.php';
 
 header('Access-Control-Allow-Origin: *');

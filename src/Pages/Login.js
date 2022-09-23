@@ -70,7 +70,7 @@ function Login() {
     console.log(inputs);
 
     axios
-      .post("http://localhost:8888/mediclinicApi/userLogin.php", inputs)
+      .post("http://localhost:8888/psychologistApi/userLogin.php", inputs)
       .then(function (res) {
         console.log(res);
 
@@ -88,7 +88,7 @@ function Login() {
       <form>
         <div className="loginForm">
           <div className="loginLogo"></div>
-          <h1>Welcome to First Order!</h1>
+          <h1>Welcome back!</h1>
           <input
             name="email"
             type="text"
@@ -107,7 +107,7 @@ function Login() {
             {passwordType === "password" ? <p>show</p> : <p>hide</p>}
           </div>
           <a href="/EditLanding" onClick={handleSubmit}>
-            <Button id="btn-login">Login!</Button>
+            <Button id="btn-login">Login</Button>
           </a>
           {/* <a href=""><p>Forgot Passowrd.</p></a> */}
           <a href="/Register">
