@@ -1,3 +1,10 @@
+body {
+  margin: 0;
+  padding: 0%;
+}
+h1 {
+  text-align: center;
+}
 .email-reg {
   margin: auto;
   width: 50%;
@@ -7,5 +14,50 @@
   width: 50%;
 }
 #submit-reg {
-  height: 50px;
+  height: 40px;
+}
+.reg-form {
+  width: 50%;
+  margin-left: 20px;
+  align-items: center;
+  float: left;
+}
+.name-reg {
+  margin: auto;
+  width: 50%;
+  float: left;
+  margin-right: 2%;
+}
+.surname-reg {
+  margin: auto;
+  width: 50%;
+  float: right;
+}
+.email-reg {
+  margin: auto;
+  width: 50%;
+  float: left;
+}
+.password-reg {
+  margin: auto;
+  width: 50%;
+  float: right;
+}
+.age-reg {
+  margin: auto;
+  width: 50%;
+  float: left;
+}
+.gender-reg {
+  margin: auto;
+  width: 50%;
+  float: right;
+}
+.aid-reg {
+  margin: auto;
+  width: 50%;
+  float: left;
+}
+#reg-img {
+  float: right;
 }

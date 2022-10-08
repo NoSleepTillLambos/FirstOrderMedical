@@ -5,6 +5,7 @@ import Doctors from "./Pages/Doctors";
 import Patients from "./Pages/Patients";
 import LoginButton from "./Components/LoginButton";
 import Register from "./Pages/Register";
+import Login from "./Pages/Login";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/Doctors" element={<Doctors />} />
           <Route path="/Patients" element={<Patients />} />
           <Route path="/Register" element={<Register />} />
+          <Route path="/Login" element={<Login />} />
         </Routes>
       </Router>
     </div>

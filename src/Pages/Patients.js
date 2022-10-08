@@ -3,11 +3,7 @@ import "../CSS/Patients.css";
 import Login from "../Pages/Login";
 
 function Patients() {
-  return (
-    <>
-      <Login />
-    </>
-  );
+  return <>Welcome to the patients page</>;
 }
 
 export default Patients;
