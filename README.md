@@ -12,7 +12,7 @@ Repository Information & Links
 <h6 align="center">DV200 - Term 2 Project | 2022</h6>
 </br>
 <p align="center">
-![image1](https://github.com/NoSleepTillLambos/LiamWedge_21100218_PsychologistApp/blob/master/src/Assets/ProjectLogo1.png)
+![image12](https://github.com/NoSleepTillLambos/LiamWedge_21100218_PsychologistApp/blob/master/src/Assets/ProjectLogo1.png)
   
   <h3 align="center">First order medical</h3>
     
@@ -59,45 +59,6 @@ First order is an app designed for maintaining and organizing a website for a ps
 
 <!-- GETTING STARTED -->
 <!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
-
-## Getting Started
-
-The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-Ensure that you have the latest version of [NPM](https://www.npmjs.com/) installed on your machine. The [GitHub Desktop](https://desktop.github.com/) program will also be required.
-
-### How to install
-
-### Installation
-
-Here are a couple of ways to clone this repo:
-
-1.  GitHub Desktop </br>
-    Enter `https://github.com/NoSleepTillLambos/LiamWedge_21100218_PsychologistApp` into the URL field and press the `Clone` button.
-
-2.  Clone Repository </br>
-    Run the following in the command-line to clone the project:
-
-    ```sh
-    git clone https://github.com/NoSleepTillLambos/LiamWedge_21100218_PsychologistApp
-    ```
-
-        Open `Software` and select `File | Open...` from the menu. Select cloned directory and press `Open` button
-
-3.  Install Dependencies </br>
-    Run the following in the command-line to install all the required dependencies:
-
-    ```sh
-    npm install
-    ```
-
-4.  An API key is not required for this installation
-
-<!-- FEATURES AND FUNCTIONALITY-->
-<!-- You can add the links to all of your imagery at the bottom of the file as references -->
-
 ## Features and Functionality
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
