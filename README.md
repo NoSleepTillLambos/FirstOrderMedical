@@ -12,15 +12,15 @@ Repository Information & Links
 <h6 align="center">DV200 - Term 2 Project | 2022</h6>
 </br>
 <p align="center">
-  
-  <h3 align="center">First order medical</h3>
+<img src="https://github.com/NoSleepTillLambos/LiamWedge_21100218_PsychologistApp/blob/master/src/Assets/ProjectLogo1.png" alt="App Logo" width="190" height="190">
     
 </p>
 <!-- TABLE OF CONTENTS -->
 
 ## Table of Contents
 
-- [About the Project](The project is centred around php and MySQL)
+- The project is centred around PHP and MySQL, the receptionists on shfit have the ability to add and remove users to the database and make changes where they see fit
+such as the updating of appointments and addition of various docotors and patients
   - [Project Description](The project was designed to help the receptionists maintain and navigate the site)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -58,45 +58,6 @@ First order is an app designed for maintaining and organizing a website for a ps
 
 <!-- GETTING STARTED -->
 <!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
-
-## Getting Started
-
-The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-Ensure that you have the latest version of [NPM](https://www.npmjs.com/) installed on your machine. The [GitHub Desktop](https://desktop.github.com/) program will also be required.
-
-### How to install
-
-### Installation
-
-Here are a couple of ways to clone this repo:
-
-1.  GitHub Desktop </br>
-    Enter `https://github.com/NoSleepTillLambos/LiamWedge_21100218_PsychologistApp` into the URL field and press the `Clone` button.
-
-2.  Clone Repository </br>
-    Run the following in the command-line to clone the project:
-
-    ```sh
-    git clone https://github.com/NoSleepTillLambos/LiamWedge_21100218_PsychologistApp
-    ```
-
-        Open `Software` and select `File | Open...` from the menu. Select cloned directory and press `Open` button
-
-3.  Install Dependencies </br>
-    Run the following in the command-line to install all the required dependencies:
-
-    ```sh
-    npm install
-    ```
-
-4.  An API key is not required for this installation
-
-<!-- FEATURES AND FUNCTIONALITY-->
-<!-- You can add the links to all of your imagery at the bottom of the file as references -->
-
 ## Features and Functionality
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
@@ -192,13 +153,7 @@ See the [open issues](https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV
 
 ## Authors
 
-- **Your Name & Surname** - [LiamWedge](https://github.com/NoSleepTillLambos)
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.\
+- **Liam Wedge** - [LiamWedge](https://github.com/NoSleepTillLambos)
 
 <!-- LICENSE -->
 
@@ -213,8 +168,7 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 
 <!-- all resources that you used and Acknowledgements here -->
 
-- [Coinlore API](https://www.coinlore.com/cryptocurrency-data-api)
-- [Coinponent](https://coinponent.com/crypto-converter-widget)
-- [React](https://reactjs.org/)
-- [Material UI](https://v4.mui.com/)
-- [Charts JS](https://www.chartjs.org/)
+- [PHP](https://www.coinlore.com/cryptocurrency-data-api)
+- [mySQL](https://coinponent.com/crypto-converter-widget)
+- [ReactBootstrap](https://reactjs.org/)
+
