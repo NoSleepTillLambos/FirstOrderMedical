@@ -12,6 +12,7 @@ Repository Information & Links
 <h6 align="center">DV200 - Term 2 Project | 2022</h6>
 </br>
 <p align="center">
+![image1](https://github.com/NoSleepTillLambos/LiamWedge_21100218_PsychologistApp/blob/master/src/Assets/ProjectLogo1.png)
   
   <h3 align="center">First order medical</h3>
     
