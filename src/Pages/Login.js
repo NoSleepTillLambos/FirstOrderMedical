@@ -58,7 +58,7 @@ function Login() {
 
     if (inputs.password === "") {
       setPasswordError(
-        <MiniModalRight message="You must include a password." />
+        <MiniModalRight message="Please provide your password" />
       );
     } else {
       setPasswordError();
@@ -70,7 +70,7 @@ function Login() {
     console.log(inputs);
 
     axios
-      .post("http://localhost:8888/psychologistApi/userLogin.php", inputs)
+      .post("http://localhost:80/psychologistApi/userLogin.php", inputs)
       .then(function (res) {
         console.log(res);
 
@@ -88,31 +88,35 @@ function Login() {
       <form>
         <div className="loginForm">
           <div className="loginLogo"></div>
-          <h1>Welcome back!</h1>
-          <input
-            name="email"
-            type="text"
-            className="email"
-            placeholder="Email"
-            onChange={emailVal}
-          />
-          <input
-            name="password"
-            type={passwordType}
-            className="password"
-            placeholder="Password"
-            onChange={passwordVal}
-          />
+          <h2>Welcome back!</h2>
+          <div className="inputs">
+            <input
+              name="email"
+              type="text"
+              className="email"
+              placeholder="Email..."
+              onChange={emailVal}
+            />
+            <input
+              name="password"
+              type={passwordType}
+              className="password"
+              placeholder="Password..."
+              onChange={passwordVal}
+            />
+          </div>
+
           <div className="passwordShow" onClick={togglePassword}>
             {passwordType === "password" ? <p>show</p> : <p>hide</p>}
           </div>
-          <a href="/EditLanding" onClick={handleSubmit}>
+          <a href="/" onClick={handleSubmit}>
             <Button id="btn-login">Login</Button>
           </a>
           {/* <a href=""><p>Forgot Passowrd.</p></a> */}
           <a href="/Register">
             <p>Don't have an account? Sign up!</p>
           </a>
+          <hr />
         </div>
         <div className="loginImg"></div>
       </form>

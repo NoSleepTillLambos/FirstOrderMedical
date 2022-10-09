@@ -18,7 +18,8 @@ h1 {
 }
 .reg-form {
   width: 50%;
-  margin-left: 20px;
+  margin-left: 100px;
+  margin-top: 5px;
   align-items: center;
   float: left;
 }

@@ -144,7 +144,7 @@ function Register() {
             <MiniModalRight message="This email is not available." />
           );
         } else if (res.data === "") {
-          setEmailIcon();
+          setEmailIcon(error);
           setEmailAvail();
           setEmailError();
         }
@@ -235,101 +235,108 @@ function Register() {
   return (
     <>
       <h1>Register below and get the help you deserve</h1>
-      <Form className="reg-form">
-        <Form.Group className="mb-2 name-reg" controlId="formBasicEmail">
-          <Form.Label>Name</Form.Label>
-          {nameError}
-          <Form.Control
-            name="name"
-            type="text"
-            placeholder="please Enter your name"
-            onChange={nameVal}
-          />
-        </Form.Group>
-        <Form.Group className="mb-2 surname-reg">
-          <Form.Label>Surname</Form.Label>
-          {surnameError}
-          <Form.Control
-            name="surname"
-            type="text"
-            placeholder="Enter your surname"
-            onChange={surnameVal}
-          />
-        </Form.Group>
-        <Form.Group className="mb-2 age-reg">
-          <Form.Label>Age</Form.Label>
-          {ageError}
-          <Form.Control
-            name="age"
-            type="text"
-            placeholder="Please enter your age"
-            onChange={ageVal}
-          />
-        </Form.Group>
-        <Form.Group className="mb-2 gender-reg">
-          <Form.Label>Gender</Form.Label>
-          {genderError}
-          <Form.Control
-            name="gender"
-            type="text"
-            placeholder="Enter your gender"
-            onChange={genderVal}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3 password-reg">
-          <Form.Label>Phone number</Form.Label>
-          {contactError}
-          <Form.Control
-            name="phone"
-            type="number"
-            placeholder="Phone number"
-            onChange={phoneVal}
-          />
-        </Form.Group>
-        <Form.Group className="mb-2 email-reg">
-          <Form.Label>Email address</Form.Label>
-          {emailAvail}
-          {emailError}
-          <Form.Control
-            name="email"
-            type="email"
-            placeholder="Please enter email"
-            onChange={emailVal}
-            onBlur={authenticateEmail}
-          />
-        </Form.Group>
+      <hr />
+      <div>
+        <Form className="reg-form">
+          <Form.Group className="mb-2 name-reg" controlId="formBasicEmail">
+            <Form.Label>Name</Form.Label>
+            {nameError}
+            <Form.Control
+              name="name"
+              type="text"
+              placeholder="please enter your name"
+              onChange={nameVal}
+            />
+          </Form.Group>
+          <Form.Group className="mb-2 surname-reg">
+            <Form.Label>Surname</Form.Label>
+            {surnameError}
+            <Form.Control
+              name="surname"
+              type="text"
+              placeholder="Enter your surname"
+              onChange={surnameVal}
+            />
+          </Form.Group>
+          <Form.Group className="mb-2 age-reg">
+            <Form.Label>Age</Form.Label>
+            {ageError}
+            <Form.Control
+              name="age"
+              type="text"
+              placeholder="Please enter your age"
+              onChange={ageVal}
+            />
+          </Form.Group>
+          <Form.Group className="mb-2 gender-reg">
+            <Form.Label>Gender</Form.Label>
+            {genderError}
+            <Form.Control
+              name="gender"
+              type="text"
+              placeholder="Enter your gender"
+              onChange={genderVal}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3 password-reg">
+            <Form.Label>Phone number</Form.Label>
+            {contactError}
+            <Form.Control
+              name="phone"
+              type="number"
+              placeholder="Phone number"
+              onChange={phoneVal}
+            />
+          </Form.Group>
+          <Form.Group className="mb-2 email-reg">
+            <Form.Label>Email address</Form.Label>
+            {emailAvail}
+            {emailError}
+            <Form.Control
+              name="email"
+              type="email"
+              placeholder="Please enter email"
+              onChange={emailVal}
+              onBlur={authenticateEmail}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3 password-reg" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          {passwordError}
-          <Form.Control
-            name="password"
-            type="password"
-            placeholder="Password"
-            onChange={passwordVal}
-          />
-        </Form.Group>
+          <Form.Group
+            className="mb-3 password-reg"
+            controlId="formBasicPassword"
+          >
+            <Form.Label>Password</Form.Label>
+            {passwordError}
+            <Form.Control
+              name="password"
+              type="password"
+              placeholder="Password"
+              onChange={passwordVal}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-2 aid-reg">
-          <Form.Label>Rank</Form.Label>
-          {rankError}
-          <Form.Control
-            name="rank"
-            type="email"
-            placeholder="Rank"
-            onChange={rankVal}
-          />
-        </Form.Group>
+          <Form.Group className="mb-2 aid-reg">
+            <Form.Label>Rank</Form.Label>
+            {rankError}
+            <Form.Control
+              name="rank"
+              type="email"
+              placeholder="Rank"
+              onChange={rankVal}
+            />
+          </Form.Group>
 
-        <Button
-          variant="primary"
-          type="submit"
-          id="submit-reg"
-          onClick={handleSubmit}
-        >
-          Submit
-        </Button>
-      </Form>
+          <Button
+            variant="primary"
+            type="submit"
+            id="submit-reg"
+            onClick={handleSubmit}
+          >
+            Submit
+          </Button>
+        </Form>
+      </div>
+
       <img src={regImage} id="reg-img"></img>
     </>
   );
