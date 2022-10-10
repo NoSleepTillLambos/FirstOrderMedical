@@ -3,8 +3,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { FaBriefcaseMedical } from "react-icons/fa";
-import icon from "../Assets/ProjectLogo1.png";
+import { GiPsychicWaves } from "react-icons/gi";
+import waves from "../Assets/svg.png";
 
 function Home() {
   const navigate = useNavigate();
@@ -38,26 +38,41 @@ function Home() {
 
   return (
     <>
-      <h2 style={{ marginBottom: 20 }}>Welcome, {receptionist}</h2>
-      <h4 style={{ marginBottom: 20 }}>
-        Featured below are your appointments for the day
-      </h4>
-
-      <div className="home-element">
-        <h2>
-          {/* when user is logged in, name will pop up with a welcome message and give them full access to the site */}
-          Appointments for today
-        </h2>
-      </div>
-
-      <div className="psych">
-        <h4>
-          Psychologists on shift today <FaBriefcaseMedical />
+      <div>
+        <h2 style={{ marginLeft: "100px" }}>Welcome {receptionist}, </h2>
+        <img></img>
+        <h4 style={{ float: "left", marginLeft: "100px" }}>
+          Here are the appointments for today
         </h4>
+
+        <div className="home-element" style={{ backgroundColor: "#248bfb" }}>
+          <h2 style={{ marginTop: " 20px" }}>
+            Add appointment <GiPsychicWaves />
+          </h2>
+          <hr id="hrTwo" />
+
+          {/* ADDING */}
+          <form>
+            <select></select>
+            <select>Mr broom</select>
+          </form>
+        </div>
       </div>
 
-      <div className="logged-receptionist">
-        <h4></h4>
+      <div
+        className="add-appointment"
+        style={{
+          marginTop: "30px",
+          float: "right",
+          width: "50%",
+          marginRight: "40px",
+          backgroundColor: "#248bfb",
+          borderRadius: "20px",
+          zIndex: 1,
+          height: "40vh",
+        }}
+      >
+        hello
       </div>
     </>
   );

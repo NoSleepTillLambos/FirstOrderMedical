@@ -234,7 +234,9 @@ function Register() {
 
   return (
     <>
-      <h3>Register below and get the help you deserve</h3>
+      <h3>
+        Welcome to first order medical, we look forward to working with you!
+      </h3>
       <hr />
       <div>
         <Form className="reg-form">

@@ -71,9 +71,11 @@ h2 {
   background-size: cover;
   float: left;
 }
-hr {
-  border: 1px solid #2b2b2b;
-  opacity: 0.4;
+#hrTwo {
+  border: 0.2px solid white;
+  width: 50%;
+  opacity: 0.7;
+  margin: auto;
 }
 
 .passwordShow {
