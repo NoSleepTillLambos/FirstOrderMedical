@@ -32,7 +32,7 @@ h2 {
   height: 50vh;
   float: left;
   text-align: center;
-  margin-left: 20px;
+  margin-left: 90px;
 }
 
 .loginLogo {
@@ -80,4 +80,10 @@ hr {
   margin-top: -2.8%;
   position: absolute;
   margin-left: 27%;
+}
+#caps-lock-warn {
+  font-weight: bold;
+  color: red;
+  font-size: 14px;
+  display: none;
 }

@@ -234,7 +234,7 @@ function Register() {
 
   return (
     <>
-      <h1>Register below and get the help you deserve</h1>
+      <h3>Register below and get the help you deserve</h3>
       <hr />
       <div>
         <Form className="reg-form">
@@ -332,7 +332,7 @@ function Register() {
             id="submit-reg"
             onClick={handleSubmit}
           >
-            Submit
+            Register
           </Button>
         </Form>
       </div>

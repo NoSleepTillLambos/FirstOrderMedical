@@ -70,13 +70,13 @@ function Login() {
     console.log(inputs);
 
     axios
-      .post("http://localhost:80/psychologistApi/userLogin.php", inputs)
+      .post("http://localhost:80/api/userLogin.php", inputs)
       .then(function (res) {
         console.log(res);
 
         if (res.data === true) {
           sessionStorage.setItem("activeUser", inputs.email);
-          navigate("/EditLanding");
+          navigate("/");
         } else {
           console.log("Email and password not valid.");
         }
@@ -88,7 +88,7 @@ function Login() {
       <form>
         <div className="loginForm">
           <div className="loginLogo"></div>
-          <h2>Welcome back!</h2>
+          <h2>Welcome!</h2>
           <div className="inputs">
             <input
               name="email"
@@ -105,16 +105,18 @@ function Login() {
               onChange={passwordVal}
             />
           </div>
-
+          <p id="caps-lock-warn">Caps lock is on!</p>
           <div className="passwordShow" onClick={togglePassword}>
             {passwordType === "password" ? <p>show</p> : <p>hide</p>}
           </div>
-          <a href="/" onClick={handleSubmit}>
-            <Button id="btn-login">Login</Button>
+          <a href="/">
+            <Button onClick={handleSubmit} id="btn-login">
+              Login
+            </Button>
           </a>
           {/* <a href=""><p>Forgot Passowrd.</p></a> */}
           <a href="/Register">
-            <p>Don't have an account? Sign up!</p>
+            <p>Don't have an account? Sign up here</p>
           </a>
           <hr />
         </div>
