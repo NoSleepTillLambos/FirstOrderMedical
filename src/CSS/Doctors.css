@@ -1,15 +1,13 @@
-h3 {
-  margin: auto;
-  text-align: center;
-}
-
 .add-doctor {
-  height: 350px;
+  height: 70vh;
   width: 600px;
-  background-color: #248bfb;
-  margin-left: 20px;
+  background-color: #145567;
+  margin-left: 40px;
   border-radius: 5px;
   float: left;
+  box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
 }
 .doctor-form {
   padding: 30px;
@@ -17,9 +15,14 @@ h3 {
 
 .data-container {
   width: 50%;
-  height: 65vh;
+  height: 70vh;
+  border-radius: 5px;
   background-color: #f7f7f7;
   float: right;
+  margin-right: 40px;
+  box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
 }
 input {
   width: 90%;

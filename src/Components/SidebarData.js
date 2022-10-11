@@ -9,24 +9,18 @@ export const SidebarData = [
     title: "Home",
     path: "/",
     icon: <AiIcons.AiFillHome />,
-    cname: " nav-text",
+    cname: "nav-text",
   },
   {
     title: "Doctors",
     path: "/Doctors",
     icon: <FaIcons.FaStethoscope />,
-    cname: " nav-text",
+    cname: "nav-text",
   },
   {
     title: "Patients",
     path: "/patients",
     icon: <IoIcons.IoIosPerson />,
     cname: " nav-text",
-  },
-  {
-    title: "Logout",
-    path: "/Login",
-    icon: <BiIcons.BiLogOut />,
-    cname: "nav-text",
   },
 ];
