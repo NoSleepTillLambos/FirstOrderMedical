@@ -2,15 +2,25 @@ import React from "react";
 import "../CSS/Doctors.css";
 import doctor from "../Assets/doctor.png";
 import { useEffect } from "react";
+import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { AiOutlineUserAdd } from "react-icons/ai";
 
 function Doctors() {
   const navigate = useNavigate();
 
+  // ROUTING BACK TO THE LOGIN IF NO USER IS LOGGED IN
+  useEffect(() => {
+    const userSession = sessionStorage.getItem("activeUser");
+    if (userSession === "" || userSession === null) {
+      navigate("/Login");
+    }
+  }, []);
   return (
     <>
-      <h3 style={{ marginLeft: "230px" }}>
-        Add Doctor<img src={doctor} alt={doctor} className="doctor-img"></img>
+      <h3 style={{ marginLeft: "200px" }}>
+        Add Psychologist
+        <img src={doctor} alt={doctor} className="doctor-img"></img>
       </h3>
 
       <div className="add-doctor">
@@ -27,9 +37,21 @@ function Doctors() {
             <option>Select Room</option>
           </select>
         </form>
+        <Button
+          style={{
+            alignItems: "center",
+            height: "50px",
+            backgroundColor: "white",
+            color: "#145567",
+          }}
+        >
+          Add Psychologist <AiOutlineUserAdd />
+        </Button>
       </div>
       <div class="data-container">
-        <h3 style={{ textAlign: "center", marginTop: "20px" }}> Doctors:</h3>
+        <h3 style={{ textAlign: "center", marginTop: "20px" }}>
+          Psychologists:
+        </h3>
       </div>
     </>
   );

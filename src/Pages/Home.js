@@ -8,6 +8,7 @@ import { Button } from "react-bootstrap";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import * as BiIcons from "react-icons/bi";
+import AppointmentsTable from "../Components/AppointmentsTable";
 
 function Home() {
   const navigate = useNavigate();
@@ -21,9 +22,10 @@ function Home() {
     activeUser: sessionStorage.getItem("activeUser"),
   });
 
-  // appointments
+  // adding new appointments
   const [appointments, setAppointments] = useState();
 
+  const [renderAppointment, setRenderAppointment] = useState();
   const [nameError, setNameError] = useState();
   const [medicalAidError, setMedicalAidError] = useState();
   const [dateError, setDateError] = useState();
@@ -33,7 +35,6 @@ function Home() {
 
   const [newAppointment, setNewAppointment] = useState({
     patientName: "",
-    medicalAidNo: "",
     date: "",
     time: "",
     doctorName: "",
@@ -71,12 +72,55 @@ function Home() {
       });
   }, []);
 
-  //------------------------ code for logging out users and reRendering to check session storage ------------------------ ////////////
-
   const setLogout = () => {
     sessionStorage.clear();
     navigate("/Login");
   };
+
+  useEffect(() => {
+    axios
+      .post("http://localhost:80/api/readAppointments.php", userId)
+      .then((res) => {
+        let data = res.data;
+        let renderAppointments = data.map((item) => (
+          // Importing table component and populating via props
+          <AppointmentsTable
+            key={item.id}
+            rerender={setRenderAppointment}
+            uniqueId={item.id}
+            patientName={item.patient}
+            doctorName={item.doctorName}
+            time={item.time}
+            room={item.room}
+          />
+        ));
+
+        setAppointments(renderAppointments);
+        setRenderAppointment(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [renderAppointment]);
+
+  // const addAppointment = (e) => {
+  //   e.preventDefault();
+  //   document.getElementById("patientName").value = "Select Patient";
+  //   document.getElementById("date").value = "";
+  //   document.getElementById("time").value = "";
+  //   document.getElementById("dr").value = "Select Doctor";
+  //   document.getElementById("drRoom").value = "Select Room";
+
+  //   axios
+  //     .post(
+  //       "http://localhost:8888/mediclinicApi/addAppointment.php",
+  //       newAppointment
+  //     )
+  //     .then((res) => {
+  //       let data = res.data;
+  //       setRenderAppointment(true);
+  //     });
+  // };
 
   return (
     <>
@@ -100,11 +144,14 @@ function Home() {
       </div>
 
       <div>
-        <h2 style={{ marginLeft: "100px" }}>Welcome {receptionist}, </h2>
-        <img></img>
-        <h4 style={{ float: "left", marginLeft: "100px" }}>
-          Here are the appointments for today:
-        </h4>
+        <div>
+          <h2 style={{ marginLeft: "100px" }}>Welcome {receptionist}, </h2>
+          <img></img>
+          <h4 style={{ float: "left", marginLeft: "100px" }}>
+            Here are the appointments for today:
+          </h4>
+          {appointments}
+        </div>
 
         <div
           className="home-element"
@@ -136,6 +183,7 @@ function Home() {
               backgroundColor: "white",
               color: "#145567",
             }}
+            // onClick={addAppointment}
           >
             Add appointment <AiOutlineUserAdd />
           </Button>

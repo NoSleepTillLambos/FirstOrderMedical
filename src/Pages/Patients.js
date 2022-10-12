@@ -3,6 +3,7 @@ import "../CSS/Patients.css";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import patientPng from "../Assets/patients.png";
+import { FaRegAddressCard } from "react-icons/fa";
 
 function Patients() {
   const navigate = useNavigate();
@@ -17,12 +18,13 @@ function Patients() {
   return (
     <>
       <div>
-        <div className="add-patient">
+        <div className="image">
           <img src={patientPng} id="patient-img"></img>
         </div>
 
-        <div className="listed-patients">
-          <h4 style={{ margin: "auto", marginTop: "20px" }}>Add a patient</h4>
+        <div className="add-patients">
+          <h4 style={{ margin: "auto", marginTop: "20px" }}>Add a patient</h4>{" "}
+          <FaRegAddressCard />
           <hr id="hrTwo" style={{ marginTop: "10px" }} />
         </div>
       </div>
