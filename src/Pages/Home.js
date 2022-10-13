@@ -34,7 +34,7 @@ function Home() {
   const [roomError, setRoomError] = useState();
 
   const [newAppointment, setNewAppointment] = useState({
-    patientName: "",
+    patient: "",
     date: "",
     time: "",
     doctorName: "",
@@ -127,7 +127,7 @@ function Home() {
       <div onClick={setLogout}>
         <button
           style={{
-            marginTop: "-75px",
+            marginTop: "-70px",
             float: "right",
             outline: "white",
             border: "none",
