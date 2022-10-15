@@ -18,14 +18,14 @@ function Doctors() {
   }, []);
   return (
     <>
-      <h3 style={{ marginLeft: "200px" }}>
-        Add Psychologist
-        <img src={doctor} alt={doctor} className="doctor-img"></img>
-      </h3>
-
       <div className="add-doctor">
+        <h3 style={{ color: "white" }}>
+          Add Psychologist
+          <img src={doctor} alt={doctor} className="doctor-img"></img>
+        </h3>
+        <hr id="hrTwo" />
         <form className="appointments-tbl">
-          <select name="name" id="patient-name">
+          <select name="name" id="patientName">
             <option>Select Patient</option>
           </select>
           <input name="date" type="date" id="date" />

@@ -46,6 +46,11 @@ function Home() {
     room: "",
   });
 
+  const setLogout = () => {
+    sessionStorage.removeItem("activeUser");
+    navigate("/");
+  };
+
   useEffect(() => {
     axios
       .get("http://localhost:80/api/readPsychologists.php", userId)
@@ -101,11 +106,6 @@ function Home() {
       });
   }, []);
 
-  const setLogout = () => {
-    sessionStorage.clear();
-    navigate("/Login");
-  };
-
   useEffect(() => {
     axios
       .post("http://localhost:80/api/readAppointments.php", userId)
@@ -132,7 +132,7 @@ function Home() {
       });
   }, [renderAppointment]);
 
-  const nameVal = () => {
+  const patientNameVal = () => {
     const patientName = selectedPatient.current.value;
     setNewAppointment({ ...newAppointment, patientName: patientName });
 
@@ -200,25 +200,6 @@ function Home() {
 
   return (
     <>
-      <div onClick={setLogout}>
-        <button
-          style={{
-            marginTop: "-70px",
-            float: "right",
-            outline: "white",
-            border: "none",
-            color: " white",
-            marginRight: "40px",
-            width: " 100px",
-            height: "50px",
-            borderRadius: "5px",
-            backgroundColor: " #145567",
-          }}
-        >
-          Logout <BiIcons.BiLogOut />
-        </button>
-      </div>
-
       <div>
         <div>
           <h2 style={{ marginLeft: "100px" }}>Welcome {receptionist}, </h2>
@@ -240,7 +221,7 @@ function Home() {
 
           {/* ADDING */}
           <form className="appointments-tbl">
-            <select name="name" id="patientName">
+            <select name="name" id="patientName" onChange={patientNameVal}>
               <option>Select Patient</option>
               {dataPatient.map((item) => (
                 <option key={item.id}>
@@ -250,13 +231,13 @@ function Home() {
             </select>
             <input name="date" type="date" id="date" />
             <input name="time" type="time" id="time" />
-            <select name="doctor" id="doctor">
+            <select name="doctor" id="doctor" onChange={docVal}>
               <option>Select Doctor</option>
               {data.map((item) => (
                 <option key={item.id}>{item.surname}</option>
               ))}
             </select>
-            <select name="room" id="doctorsRoom">
+            <select name="room" id="doctorsRoom" onChange={roomVal}>
               <option>Select Room</option>
             </select>
           </form>
@@ -293,6 +274,23 @@ function Home() {
           Receptionist on shift <MdOutlineWorkOutline />
         </h2>
         <hr id="hrTwo" />
+        <button
+          style={{
+            float: "right",
+            marginTop: "160px",
+            outline: "white",
+            border: "none",
+            color: "#145567",
+            marginRight: "20px",
+            width: " 100px",
+            height: "50px",
+            borderRadius: "5px",
+            backgroundColor: "white",
+          }}
+          onClick={setLogout}
+        >
+          Logout <BiIcons.BiLogOut />
+        </button>
       </div>
     </>
   );

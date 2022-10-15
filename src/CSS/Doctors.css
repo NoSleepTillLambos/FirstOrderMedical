@@ -1,5 +1,6 @@
 .add-doctor {
   height: 70vh;
+  margin-top: 30px;
   width: 600px;
   background-color: #145567;
   margin-left: 40px;
@@ -14,6 +15,7 @@
 }
 
 .data-container {
+  margin-top: 30px;
   width: 50%;
   height: 70vh;
   border-radius: 5px;
