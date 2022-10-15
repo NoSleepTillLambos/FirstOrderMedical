@@ -17,7 +17,7 @@ h4 {
   width: 50%;
   float: right;
   border-radius: 10px;
-  margin-top: -180px;
+  margin-top: -420px;
   margin-right: 40px;
   color: white;
   text-align: center;
@@ -37,7 +37,7 @@ h4 {
   margin-left: 50px;
   text-align: center;
 }
-#patient-name {
+#patientName {
   width: 200px;
   border-radius: 15px;
   height: 40px;

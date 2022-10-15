@@ -6,7 +6,8 @@
 }
 .appointments-table {
   width: 40%;
-  height: 3vh;
+  color: green;
+  height: 20vh;
   padding: 2%;
   background-color: #145567;
   color: black;
@@ -14,7 +15,10 @@
   margin-top: 30px;
   color: white;
   margin-left: 3%;
+  box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
 }
 .appointments-table p {
-  margin-left: 20px;
+  margin-right: 10%;
 }

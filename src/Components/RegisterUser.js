@@ -234,7 +234,7 @@ function Register() {
 
   return (
     <>
-      <h3>
+      <h3 style={{ textAlign: "center" }}>
         Welcome to first order medical, we look forward to working with you!
       </h3>
       <hr />

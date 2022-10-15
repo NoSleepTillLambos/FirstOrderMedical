@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+
 function AppointmentsTable(props) {
   return (
     <>
@@ -7,16 +8,16 @@ function AppointmentsTable(props) {
       <div className="appointments-table">
         <p style={{ float: "left" }}>
           <strong>Patient: </strong>
-          {props.patient}
+          {props.patientName}
         </p>
-        <p style={{ float: "left" }}>
+        <p>
           <strong>Doctor: </strong>Dr. {props.doctorName}
         </p>
         <p>
-          <strong>Time: </strong>
-          {props.time}
+          <strong>Time created: </strong>
+          {props.appointmentCreated}
         </p>
-        <p style={{ float: "right" }}>
+        <p>
           <strong>Room: </strong>
           {props.room}
         </p>

@@ -1,6 +1,6 @@
 import "../CSS/Home.css";
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { GiPsychicWaves } from "react-icons/gi";
@@ -14,6 +14,8 @@ function Home() {
   const navigate = useNavigate();
 
   const [data, setData] = useState([]);
+  const [dataPatient, setDataPatient] = useState([]);
+  const [roomData, setRoomData] = useState([]);
   const [receptionist, setReceptionist] = useState();
   const [renderImage, setRenderImage] = useState();
   const [receptionistName, setReceptionistName] = useState([]);
@@ -27,16 +29,19 @@ function Home() {
 
   const [renderAppointment, setRenderAppointment] = useState();
   const [nameError, setNameError] = useState();
-  const [medicalAidError, setMedicalAidError] = useState();
   const [dateError, setDateError] = useState();
   const [timeError, setTimeError] = useState();
   const [docError, setDocError] = useState();
   const [roomError, setRoomError] = useState();
 
+  let selectedDoctor = useRef();
+  let selectedRoom = useRef();
+  let selectedPatient = useRef();
+
   const [newAppointment, setNewAppointment] = useState({
     patient: "",
     date: "",
-    time: "",
+    appointmentCreated: "",
     doctorName: "",
     room: "",
   });
@@ -47,6 +52,30 @@ function Home() {
       .then((res) => {
         let psychData = res.data;
         setData(psychData);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:80/api/readDoctors.php", userId)
+      .then((res) => {
+        let docData = res.data;
+        setData(docData);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:80/api/readPatients.php", userId)
+      .then((res) => {
+        let PatientData = res.data;
+        setDataPatient(PatientData);
       })
       .catch((err) => {
         console.log(err);
@@ -89,8 +118,8 @@ function Home() {
             rerender={setRenderAppointment}
             uniqueId={item.id}
             patientName={item.patient}
-            doctorName={item.doctorName}
-            time={item.time}
+            doctorName={item.doctor}
+            appointmentCreated={item.created_at}
             room={item.room}
           />
         ));
@@ -103,24 +132,71 @@ function Home() {
       });
   }, [renderAppointment]);
 
-  // const addAppointment = (e) => {
-  //   e.preventDefault();
-  //   document.getElementById("patientName").value = "Select Patient";
-  //   document.getElementById("date").value = "";
-  //   document.getElementById("time").value = "";
-  //   document.getElementById("dr").value = "Select Doctor";
-  //   document.getElementById("drRoom").value = "Select Room";
+  const nameVal = () => {
+    const patientName = selectedPatient.current.value;
+    setNewAppointment({ ...newAppointment, patientName: patientName });
 
-  //   axios
-  //     .post(
-  //       "http://localhost:8888/mediclinicApi/addAppointment.php",
-  //       newAppointment
-  //     )
-  //     .then((res) => {
-  //       let data = res.data;
-  //       setRenderAppointment(true);
-  //     });
-  // };
+    // validate if the field is empty.
+    if (newAppointment.patientName !== "") {
+      setNameError();
+    }
+  };
+
+  const dateVal = (e) => {
+    const value = e.target.value;
+    setNewAppointment({ ...newAppointment, date: value });
+
+    // validate if the field is empty.
+    if (newAppointment.date !== "") {
+      setDateError();
+    }
+  };
+
+  const timeVal = (e) => {
+    const value = e.target.value;
+    setNewAppointment({ ...newAppointment, time: value });
+
+    // validate if the field is empty.
+    if (newAppointment.time !== "") {
+      setTimeError();
+    }
+  };
+
+  const docVal = () => {
+    const doctorName = selectedDoctor.current.value;
+    setNewAppointment({ ...newAppointment, doctorName: doctorName });
+
+    // validate if the field is empty.
+    if (newAppointment.doc !== "") {
+      setDocError();
+    }
+  };
+
+  const roomVal = () => {
+    const room = selectedRoom.current.value;
+    setNewAppointment({ ...newAppointment, room: room });
+
+    // validate if the field is empty.
+    if (newAppointment.room !== "") {
+      setRoomError();
+    }
+  };
+
+  const addAppointment = (e) => {
+    e.preventDefault();
+    document.getElementById("patientName").value = "Select Patient";
+    document.getElementById("date").value = "";
+    document.getElementById("time").value = "";
+    document.getElementById("doctor").value = "Select Doctor";
+    document.getElementById("doctorsRoom").value = "Select Room";
+
+    axios
+      .post("http://localhost:80/api/addAppointment.php", newAppointment)
+      .then((res) => {
+        let data = res.data;
+        setRenderAppointment(true);
+      });
+  };
 
   return (
     <>
@@ -164,13 +240,21 @@ function Home() {
 
           {/* ADDING */}
           <form className="appointments-tbl">
-            <select name="name" id="patient-name">
+            <select name="name" id="patientName">
               <option>Select Patient</option>
+              {dataPatient.map((item) => (
+                <option key={item.id}>
+                  {item.name} {item.surname}
+                </option>
+              ))}
             </select>
             <input name="date" type="date" id="date" />
             <input name="time" type="time" id="time" />
             <select name="doctor" id="doctor">
               <option>Select Doctor</option>
+              {data.map((item) => (
+                <option key={item.id}>{item.surname}</option>
+              ))}
             </select>
             <select name="room" id="doctorsRoom">
               <option>Select Room</option>
@@ -183,7 +267,7 @@ function Home() {
               backgroundColor: "white",
               color: "#145567",
             }}
-            // onClick={addAppointment}
+            onClick={addAppointment}
           >
             Add appointment <AiOutlineUserAdd />
           </Button>
@@ -193,7 +277,7 @@ function Home() {
       <div
         className="add-appointment"
         style={{
-          marginTop: "23px",
+          marginTop: "-70px",
           float: "right",
           width: "50%",
           marginRight: "40px",
