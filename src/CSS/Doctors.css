@@ -66,3 +66,29 @@ button {
   float: left;
   margin-right: 15px;
 }
+
+/* doctor component css */
+h5 {
+  text-align: center;
+}
+.drCard {
+  background-color: #145567;
+  height: 200px;
+  width: 160px;
+  float: right;
+  color: white;
+  margin: auto;
+  margin-right: 2rem;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.18);
+  -webkit-box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.18);
+}
+.drCard p {
+  margin-left: 10px;
+}
+button {
+  border-radius: 10px;
+  margin-top: 5px;
+}

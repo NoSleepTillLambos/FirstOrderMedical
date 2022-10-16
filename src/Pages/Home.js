@@ -48,7 +48,7 @@ function Home() {
 
   const setLogout = () => {
     sessionStorage.removeItem("activeUser");
-    navigate("/");
+    navigate("/Login");
   };
 
   useEffect(() => {
@@ -221,7 +221,12 @@ function Home() {
 
           {/* ADDING */}
           <form className="appointments-tbl">
-            <select name="name" id="patientName" onChange={patientNameVal}>
+            <select
+              name="name"
+              id="patientName"
+              ref={selectedPatient}
+              onChange={patientNameVal}
+            >
               <option>Select Patient</option>
               {dataPatient.map((item) => (
                 <option key={item.id}>
@@ -230,14 +235,24 @@ function Home() {
               ))}
             </select>
             <input name="date" type="date" id="date" />
-            <input name="time" type="time" id="time" />
-            <select name="doctor" id="doctor" onChange={docVal}>
+            <input name="time" type="time" id="time" onChange={timeVal} />
+            <select
+              name="doctor"
+              id="doctor"
+              ref={selectedDoctor}
+              onChange={docVal}
+            >
               <option>Select Doctor</option>
               {data.map((item) => (
                 <option key={item.id}>{item.surname}</option>
               ))}
             </select>
-            <select name="room" id="doctorsRoom" onChange={roomVal}>
+            <select
+              name="room"
+              id="doctorsRoom"
+              ref={selectedRoom}
+              onChange={roomVal}
+            >
               <option>Select Room</option>
             </select>
           </form>
