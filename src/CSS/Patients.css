@@ -16,7 +16,7 @@
 }
 .add-patients {
   float: right;
-  margin-right: 20px;
+  margin-right: 40px;
   width: 60%;
   height: 300px;
   background-color: #145567;
@@ -29,4 +29,27 @@
 }
 #patient-img {
   margin-top: 80px;
+}
+.patients {
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+  color: #145567;
+  float: right;
+  margin-right: 40px;
+  width: 60%;
+  margin-top: 50px;
+  box-shadow: 10px 10px 66px -14px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 66px -14px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 66px -14px rgba(0, 0, 0, 0.75);
+}
+h4 {
+  text-align: center;
+  margin-top: 10px;
+}
+#hrThree {
+  background-color: #145567;
+  width: 40%;
+  margin-top: 20px;
+  margin: auto;
 }

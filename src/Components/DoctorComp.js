@@ -3,6 +3,7 @@ import axios from "axios";
 // import EditDoctor from "./EditDoctor";
 import { useNavigate } from "react-router-dom";
 import "../CSS/Doctors.css";
+import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 
 const DoctorComponent = (props) => {
   const navigate = useNavigate();
@@ -67,16 +68,18 @@ const DoctorComponent = (props) => {
 
   return (
     <>
-      {modal}
+      {/* {modal} */}
       <div className="drCard">
-        {/* <button className="editDoctor">hello</button>
-        <button className="deleteDoctor" onClick={deleteDoctor}></button> */}
+        <AiFillEdit style={{ margin: "8px" }} />
+        <AiFillDelete
+          onClick={deleteDoctor}
+          style={{ float: "right", margin: "8px" }}
+        />
         <div className="doctorProfile">
           <img src={renderImage} className="doctorImage" />
         </div>
         <h5>Dr. {props.surname}</h5>
-
-        <hr />
+        <hr style={{ width: "70%", margin: "auto", marginBottom: "5px" }} />
         <p>
           Gender:
           {props.gender}

@@ -66,17 +66,48 @@ button {
   float: left;
   margin-right: 15px;
 }
-
+#patientName {
+  width: 280px;
+  text-align: center;
+  border-radius: 15px;
+  height: 40px;
+  outline: none;
+  opacity: 0.8;
+}
+#surname {
+  width: 200px;
+  border-radius: 15px;
+  height: 40px;
+  outline: none;
+  opacity: 0.8;
+  text-align: center;
+}
+#age {
+  width: 200px;
+  border-radius: 15px;
+  height: 40px;
+  outline: none;
+  opacity: 0.8;
+  text-align: center;
+}
+#doctor {
+  width: 200px;
+  border-radius: 15px;
+  height: 40px;
+  outline: none;
+  opacity: 0.8;
+  text-align: center;
+}
 /* doctor component css */
 h5 {
   text-align: center;
 }
 .drCard {
-  background-color: #145567;
+  background-color: white;
   height: 200px;
   width: 160px;
   float: right;
-  color: white;
+  color: #145567;
   margin: auto;
   margin-right: 2rem;
   margin-top: 10px;
@@ -91,4 +122,5 @@ h5 {
 button {
   border-radius: 10px;
   margin-top: 5px;
+  background-color: #145567;
 }

@@ -126,7 +126,7 @@ function Doctors() {
         <form className="appointments-tbl">
           <input
             type="text"
-            id="name patientName"
+            id="patientName"
             placeholder="name"
             onChange={nameVal}
           ></input>
