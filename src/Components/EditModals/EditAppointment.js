@@ -1,11 +1,19 @@
 import React from "react";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import { GrUpdate } from "react-icons/gr";
+import { Button } from "react-bootstrap";
 
-function EditAppointment() {
+function EditAppointment(props) {
+  const closeModal = () => {
+    props.rerender();
+  };
+
   const [data, setData] = useState([]);
   const [roomData, setRoomData] = useState([]);
   const [dataPatient, setDataPatient] = useState([]);
+
   let selectedDoctor = useRef();
   let selectedRoom = useRef();
   let selectedPatient = useRef();
@@ -44,47 +52,41 @@ function EditAppointment() {
 
   const [updatedAppointment, setUpdatedAppointment] = useState({
     id: props.id,
-    newPatient: props.origionalPatientName,
-    newDate: props.origionalDate,
-    newTime: props.origionalTime,
-    newDoctor: props.origionalDoctorName,
-    newRoom: props.origionalRoom,
+    newPatient: props.originalPatientName,
+    newDate: props.originalDate,
+    newTime: props.originalTime,
+    newDoctor: props.originalDoctorName,
+    newRoom: props.originalRoom,
   });
 
-  const closeModal = () => {
-    props.rerender();
-  };
-
   useEffect(() => {
-    document.getElementById("patientName").innerHTML =
-      props.origionalPatientName;
-    document.getElementById("time").innerHTML = props.origionalTime;
-    document.getElementById("dr").innerHTML = props.origionalDoctorName;
-    document.getElementById("drRoom").innerHTML = props.origionalRoom;
-    document.getElementById("date").innerHTML = props.origionalDate;
+    document.getElementById("patientName").innerHTML = props.originalName;
+    document.getElementById("date").innerHTML = props.originalDoctorName;
+    document.getElementById("doctor").innerHTML = props.originalRoom;
+    document.getElementById("doctorsRoom").innerHTML = props.originalDate;
   }, []);
 
-  const nameChange = (e) => {
+  const nameChangeVal = (e) => {
     let value = selectedPatient.current.value;
     setUpdatedAppointment({ ...updatedAppointment, newPatient: value });
   };
 
-  const doctorChange = () => {
+  const doctorChangeVal = () => {
     let newDoctor = selectedDoctor.current.value;
     setUpdatedAppointment({ ...updatedAppointment, newDoctor: newDoctor });
   };
 
-  const timeChange = (e) => {
+  const timeChangeVal = (e) => {
     let value = e.target.value;
     setUpdatedAppointment({ ...updatedAppointment, newTime: value });
   };
 
-  const dateChange = (e) => {
+  const dateChangeVal = (e) => {
     let value = e.target.value;
     setUpdatedAppointment({ ...updatedAppointment, newDate: value });
   };
 
-  const roomChange = () => {
+  const roomChangeVal = () => {
     let newRoom = selectedRoom.current.value;
     setUpdatedAppointment({ ...updatedAppointment, newRoom: newRoom });
   };
@@ -102,7 +104,66 @@ function EditAppointment() {
 
   return (
     <>
-      <div>hello, this is the modal</div>
+      {/* MODAL STYLING IN APP.CSS */}
+      <div className="appointmentModal">
+        <h4 style={{ marginTop: "5px" }}>Edit appointments</h4>
+        <hr id="modalHr" />
+        <AiOutlineCloseCircle
+          id="closeModal"
+          style={{
+            float: "right",
+            fontSize: "2.5rem",
+            marginTop: "-35px",
+            marginRight: "10px",
+          }}
+          onClick={closeModal}
+        />
+        <form
+          className="editAppointments"
+          style={{ marginLeft: "50px", marginTop: "30px" }}
+        >
+          <select
+            name="name"
+            id="patientName"
+            ref={selectedPatient}
+            onChange={nameChangeVal}
+          >
+            <option>Select Patient</option>
+            {dataPatient.map((item) => (
+              <option key={item.id}>
+                {item.name} {item.surname}
+              </option>
+            ))}
+          </select>
+          <input type="date" id="date" placeholder="date"></input>
+          <select
+            name="doctor"
+            id="doctor"
+            ref={selectedDoctor}
+            onChange={doctorChangeVal}
+          >
+            <option>Select Doctor</option>
+            {data.map((item) => (
+              <option key={item.id}>{item.surname}</option>
+            ))}
+          </select>
+          <select
+            name="room"
+            id="doctorsRoom"
+            ref={selectedRoom}
+            onChange={roomChangeVal}
+          >
+            <option>Select Room</option>
+            {roomData.map((item) => (
+              <option key={item.id}>{item.room}</option>
+            ))}
+          </select>
+        </form>
+        <button style={{ color: "white", border: "none" }}>
+          Update Appointment
+          <GrUpdate fontSize={"1rem"} style={{ marginLeft: "20px" }} />
+        </button>
+      </div>
     </>
   );
 }

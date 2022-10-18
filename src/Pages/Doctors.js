@@ -11,6 +11,8 @@ import axios from "axios";
 function Doctors() {
   const navigate = useNavigate();
 
+  const [modal, setModal] = useState();
+
   const [userId, setUserId] = useState({
     activeUser: sessionStorage.getItem("activeUser"),
   });

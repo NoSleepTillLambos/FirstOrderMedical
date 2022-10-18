@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../CSS/Doctors.css";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
+import EditDoctor from "./EditModals/EditDoctor";
 
 const DoctorComponent = (props) => {
   const navigate = useNavigate();
@@ -32,22 +33,22 @@ const DoctorComponent = (props) => {
     //   });
   }, []);
 
-  //   const editDoctor = () => {
-  //     setModal(
-  //       <EditDoctor
-  //         id={props.uniqueId}
-  //         upRender={props.rerender}
-  //         rerender={setModal}
-  //         origionalName={props.name}
-  //         origionalSurname={props.surname}
-  //         origionalAge={props.age}
-  //         origionalGender={props.gender}
-  //         origionalCell={props.cellNo}
-  //         origionalEmail={props.email}
-  //         origionalSpecialization={props.specialization}
-  //       />
-  //     );
-  //   };
+  const editDoctor = () => {
+    setModal(
+      <EditDoctor
+        id={props.uniqueId}
+        upRender={props.rerender}
+        rerender={setModal}
+        origionalName={props.name}
+        origionalSurname={props.surname}
+        origionalAge={props.age}
+        origionalGender={props.gender}
+        origionalCell={props.cellNo}
+        origionalEmail={props.email}
+        origionalSpecialization={props.specialization}
+      />
+    );
+  };
 
   const deleteDoctor = () => {
     if (
@@ -68,9 +69,9 @@ const DoctorComponent = (props) => {
 
   return (
     <>
-      {/* {modal} */}
+      {modal}
       <div className="drCard">
-        <AiFillEdit style={{ margin: "8px" }} />
+        <AiFillEdit style={{ margin: "8px" }} onClick={editDoctor} />
         <AiFillDelete
           onClick={deleteDoctor}
           style={{ float: "right", margin: "8px" }}

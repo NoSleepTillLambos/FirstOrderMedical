@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +9,6 @@
   height: 20vh;
   padding: 2%;
   background-color: white;
-  color: black;
   border-radius: 5px;
   margin-top: 30px;
   margin-left: 40px;
@@ -21,4 +20,56 @@
 }
 .appointments-tbl p {
   margin-right: 10%;
+}
+
+/* modal styling */
+#closeModal:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.appointmentModal {
+  z-index: 1;
+  width: 60vw;
+  height: 60vh;
+  border-radius: 5px;
+  background-color: white;
+  opacity: 0.9;
+  margin-left: 300px;
+  margin-top: 50px;
+  position: fixed;
+  color: #145567;
+  box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+}
+.editDoctorModal {
+  z-index: 1;
+  width: 60vw;
+  height: 60vh;
+  border-radius: 5px;
+  background-color: white;
+  opacity: 0.9;
+  margin-left: -380px;
+  position: fixed;
+  color: #145567;
+  box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+}
+.editPatientModal {
+  z-index: 1;
+  width: 60vw;
+  height: 60vh;
+  border-radius: 5px;
+  background-color: white;
+  opacity: 0.9;
+  color: #145567;
+  box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
+}
+#modalHr {
+  background-color: #145567;
+  width: 50%;
+  margin: auto;
 }
