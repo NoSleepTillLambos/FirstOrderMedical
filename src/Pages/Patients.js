@@ -18,7 +18,7 @@ function Patients() {
   const [patients, setPatients] = useState();
 
   const [inputs, setInputs] = useState({
-    image: "",
+    // image: "",
     name: "",
     surname: "",
     age: "",
@@ -28,6 +28,48 @@ function Patients() {
     password: "",
     medicalAidNo: "",
   });
+
+  const nameVal = (e) => {
+    const value = e.target.value;
+    setInputs({ ...inputs, name: value });
+  };
+
+  const surnameVal = (e) => {
+    const value = e.target.value;
+    setInputs({ ...inputs, surname: value });
+  };
+
+  const ageVal = (e) => {
+    const value = e.target.value;
+    setInputs({ ...inputs, age: value });
+  };
+
+  const genderVal = (e) => {
+    const value = e.target.value;
+    setInputs({ ...inputs, gender: value });
+  };
+
+  const contactVal = (e) => {
+    const value = e.target.value;
+    setInputs({ ...inputs, cellNo: value });
+  };
+
+  const emailVal = (e) => {
+    const value = e.target.value;
+    setInputs({ ...inputs, email: value });
+  };
+
+  const passwordVal = (e) => {
+    // get input
+    const value = e.target.value;
+    setInputs({ ...inputs, password: value });
+  };
+
+  const medicalAidVal = (e) => {
+    // get input
+    const value = e.target.value;
+    setInputs({ ...inputs, medicalAidNo: value });
+  };
 
   // ROUTING BACK TO THE LOGIN IF NO USER IS LOGGED IN
   useEffect(() => {
@@ -65,6 +107,26 @@ function Patients() {
         console.log(err);
       });
   }, [renderPatients]);
+
+  const addPatient = () => {
+    document.getElementById("patientName").value = "";
+    document.getElementById("surname").value = "";
+    document.getElementById("age").value = "";
+    document.getElementById("gender").value = "";
+    document.getElementById("contact").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("medicalAid").value = "";
+
+    axios
+      .post("http://localhost:80/api/addPatients.php", inputs)
+      .then((res) => {
+        let data = res.data;
+        console.log(data);
+        setRenderPatients(true);
+      });
+  };
+
   return (
     <>
       <div>
@@ -76,16 +138,50 @@ function Patients() {
           <h4>Add a patient</h4>
           <FaRegAddressCard />
           <hr id="hrTwo" />
-          <form className="appointments-tbl">
-            <input type="text" id="patientName" placeholder="name"></input>
-            <input type="text" id="surname" placeholder="surname" />
-            <input type="number" id="age" placeholder="age" />
-            <select name="doctor" id="doctor">
-              <option>Select Patient</option>
-            </select>
-            <select name="room" id="doctorsRoom">
-              <option>Select Room</option>
-            </select>
+          <form style={{ margin: "auto", marginTop: "3%" }}>
+            <input
+              type="text"
+              id="patientName"
+              placeholder="name"
+              onChange={nameVal}
+            ></input>
+            <input
+              type="text"
+              id="surname"
+              placeholder="surname"
+              onChange={surnameVal}
+            />
+            <input type="number" id="age" placeholder="age" onChange={ageVal} />
+            <input
+              type="text"
+              id="gender"
+              placeholder="Gender"
+              onChange={genderVal}
+            />
+            <input
+              type="number"
+              id="contact"
+              placeholder="Phone number"
+              onChange={contactVal}
+            />
+            <input
+              type="text"
+              id="email"
+              placeholder="Email"
+              onChange={emailVal}
+            />
+            <input
+              type="text"
+              id="password"
+              placeholder="Password"
+              onChange={passwordVal}
+            />
+            <input
+              type="text"
+              id="medicalAid"
+              placeholder="Medical Aid"
+              onChange={medicalAidVal}
+            />
           </form>
           <Button
             style={{
@@ -95,6 +191,7 @@ function Patients() {
               backgroundColor: "white",
               color: "#145567",
             }}
+            onClick={addPatient}
           >
             Add Psychologist
           </Button>

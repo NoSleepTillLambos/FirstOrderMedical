@@ -209,7 +209,10 @@ function Home() {
           <hr id="hrTwo" />
 
           {/* ADDING */}
-          <form className="appointments-tbl">
+          <form
+            className="addAppointments"
+            style={{ marginLeft: "50px", marginTop: "30px" }}
+          >
             <select
               name="name"
               id="patientName"

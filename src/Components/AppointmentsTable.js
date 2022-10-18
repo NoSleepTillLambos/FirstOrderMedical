@@ -7,7 +7,7 @@ function AppointmentsTable(props) {
   return (
     <>
       {/* styling coming from app.css */}
-      <div className="appointments-table">
+      <div className="appointments-tbl">
         <p style={{ float: "left" }}>
           <strong>Patient: </strong>
           {props.patientName}

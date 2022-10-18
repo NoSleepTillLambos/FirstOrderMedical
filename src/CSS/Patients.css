@@ -72,3 +72,52 @@ h4 {
 .pCard p {
   margin-left: 5%;
 }
+
+#patientName {
+  width: 200px;
+  text-align: center;
+  border-radius: 15px;
+  height: 40px;
+  outline: none;
+  opacity: 0.8;
+}
+#gender {
+  width: 200px;
+  text-align: center;
+  border-radius: 15px;
+  height: 40px;
+  outline: none;
+  opacity: 0.8;
+}
+#email {
+  width: 200px;
+  text-align: center;
+  border-radius: 15px;
+  height: 40px;
+  outline: none;
+  opacity: 0.8;
+}
+#password {
+  width: 160px;
+  text-align: center;
+  border-radius: 15px;
+  height: 40px;
+  outline: none;
+  opacity: 0.8;
+}
+#medicalAid {
+  width: 160px;
+  text-align: center;
+  border-radius: 15px;
+  height: 40px;
+  outline: none;
+  opacity: 0.8;
+}
+#contact {
+  width: 280px;
+  text-align: center;
+  border-radius: 15px;
+  height: 40px;
+  outline: none;
+  opacity: 0.8;
+}

@@ -14,9 +14,9 @@ function PatientComp(props) {
           <div className="patientProfile">
             {/* <img src={renderPatientImage} className="patientImage" /> */}
           </div>
-          <h4>
+          <h5>
             {props.name} {props.surname}
-          </h4>
+          </h5>
           <p id="medicalAidNo">{props.medical_aid}</p>
           <hr />
           <p>
@@ -29,7 +29,7 @@ function PatientComp(props) {
           </p>
           <p>
             <strong>Cell No: </strong>
-            {props.cellNo}
+            {props.contact}
           </p>
         </div>
       </>

@@ -123,7 +123,7 @@ function Doctors() {
           <img src={doctor} alt={doctor} className="doctor-img"></img>
         </h3>
         <hr id="hrTwo" />
-        <form className="appointments-tbl">
+        <form style={{ marginLeft: "60px", marginTop: "50px" }}>
           <input
             type="text"
             id="patientName"
@@ -146,8 +146,8 @@ function Doctors() {
         </form>
         <Button
           style={{
-            alignItems: "center",
             height: "70px",
+            marginTop: "90px",
             backgroundColor: "white",
             color: "#145567",
           }}
