@@ -23,10 +23,10 @@ function Patients() {
     surname: "",
     age: "",
     gender: "",
-    cellNo: "",
+    contact: "",
     email: "",
     password: "",
-    medicalAidNo: "",
+    medicalAid: "",
   });
 
   const nameVal = (e) => {

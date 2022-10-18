@@ -191,9 +191,8 @@ function Home() {
     <>
       <div>
         <div>
-          <h2 style={{ marginLeft: "100px" }}>Welcome {receptionist}, </h2>
           <img></img>
-          <h4 style={{ float: "left", marginLeft: "100px" }}>
+          <h4 style={{ float: "left", marginLeft: "40px" }}>
             Here are the appointments for today:
           </h4>
           {appointments}
@@ -253,6 +252,7 @@ function Home() {
           <Button
             style={{
               margin: "auto",
+              marginTop: "80px",
               height: "50px",
               backgroundColor: "white",
               color: "#145567",
@@ -267,7 +267,7 @@ function Home() {
       <div
         className="add-appointment"
         style={{
-          marginTop: "-70px",
+          marginTop: "-80px",
           float: "right",
           width: "50%",
           marginRight: "40px",
@@ -275,18 +275,22 @@ function Home() {
           borderRadius: "10px",
           zIndex: 1,
           height: "40vh",
-          textAlign: "center",
           color: "white",
         }}
       >
-        <h2 style={{ marginTop: " 20px" }}>
+        <h2 style={{ marginTop: " 20px", textAlign: "center" }}>
           Receptionist on shift <MdOutlineWorkOutline />
         </h2>
+
         <hr id="hrTwo" />
+        <h2 style={{ margin: "30px" }}>Welcome {receptionist}! </h2>
+        <p style={{ marginLeft: "30px" }}>
+          You can find the appointments for today on the left
+        </p>
         <button
           style={{
             float: "right",
-            marginTop: "160px",
+            marginTop: "30px",
             outline: "white",
             border: "none",
             color: "#145567",
