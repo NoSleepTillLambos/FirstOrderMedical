@@ -31,14 +31,14 @@
   margin-top: 80px;
 }
 .patients {
-  height: 250px;
+  height: 20%;
   background-color: white;
   border-radius: 10px;
   color: #145567;
   float: right;
   margin-right: 40px;
   width: 60%;
-  margin-top: 50px;
+  margin-top: 30px;
   box-shadow: 10px 10px 66px -14px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 10px 66px -14px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 66px -14px rgba(0, 0, 0, 0.75);
@@ -52,4 +52,23 @@ h4 {
   width: 40%;
   margin-top: 20px;
   margin: auto;
+}
+
+/* patient card component css */
+.pCard {
+  background-color: white;
+  height: 200px;
+  width: 180px;
+  float: right;
+  color: #145567;
+  margin-right: 2.5rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.18);
+  -webkit-box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.18);
+}
+.pCard p {
+  margin-left: 5%;
 }

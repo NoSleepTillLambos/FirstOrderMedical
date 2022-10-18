@@ -102,11 +102,11 @@ function Doctors() {
   const addDoctor = () => {
     document.getElementById("name").value = "";
     document.getElementById("surname").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("contact").value = "";
+    document.getElementById("password").value = "";
     document.getElementById("age").value = "";
     document.getElementById("gender").value = "";
-    document.getElementById("contact").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("password").value = "";
 
     axios.post("http://localhost:80/api/addDoctors.php", values).then((res) => {
       let data = res.data;

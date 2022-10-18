@@ -1,5 +1,7 @@
 import React from "react";
 import "../App.css";
+import { AiFillEdit } from "react-icons/ai";
+import { AiFillDelete } from "react-icons/ai";
 
 function AppointmentsTable(props) {
   return (
@@ -11,7 +13,8 @@ function AppointmentsTable(props) {
           {props.patientName}
         </p>
         <p>
-          <strong>Doctor: </strong>Dr. {props.doctorName}
+          <strong>Doctor: </strong>
+          {props.doctorName}
         </p>
         <p>
           <strong>Time created: </strong>
@@ -21,6 +24,8 @@ function AppointmentsTable(props) {
           <strong>Room: </strong>
           {props.room}
         </p>
+        <AiFillEdit style={{ float: "right", marginTop: "-120px" }} />
+        <AiFillDelete style={{ float: "right", marginTop: "-80px" }} />
         {/* <div className="delete" onClick={deleteAppointment}></div> */}
         {/* <div className="edit" onClick={editAppointment}></div> */}
       </div>

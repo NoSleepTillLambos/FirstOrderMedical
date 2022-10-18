@@ -56,7 +56,7 @@ const DoctorComponent = (props) => {
       let doctorId = { id: props.uniqueId };
 
       axios
-        .post("http://localhost:89/api/deleteDoctor.php", doctorId)
+        .post("http://localhost:80/api/deleteDoctor.php", doctorId)
         .then((res) => {
           let data = res.data;
           props.rerender(true);

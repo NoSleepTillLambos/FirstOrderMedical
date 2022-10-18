@@ -67,7 +67,6 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputs);
 
     axios
       .post("http://localhost:80/api/userLogin.php", inputs)
@@ -78,7 +77,7 @@ function Login() {
           sessionStorage.setItem("activeUser", inputs.email);
           navigate("/");
         } else {
-          console.log("Email and password not valid.");
+          alert("Email and password not valid.");
         }
       });
   };

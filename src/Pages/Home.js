@@ -15,22 +15,20 @@ function Home() {
 
   const [data, setData] = useState([]);
   const [dataPatient, setDataPatient] = useState([]);
-  const [roomData, setRoomData] = useState([]);
   const [receptionist, setReceptionist] = useState();
-  const [renderImage, setRenderImage] = useState();
+  // const [renderImage, setRenderImage] = useState();
   const [receptionistName, setReceptionistName] = useState([]);
+  const [roomData, setRoomData] = useState([]);
 
   const [userId, setUserId] = useState({
     activeUser: sessionStorage.getItem("activeUser"),
   });
 
-  // adding new appointments
+  // ADDING NEW APPOINTMENTS
   const [appointments, setAppointments] = useState();
 
   const [renderAppointment, setRenderAppointment] = useState();
   const [nameError, setNameError] = useState();
-  const [dateError, setDateError] = useState();
-  const [timeError, setTimeError] = useState();
   const [docError, setDocError] = useState();
   const [roomError, setRoomError] = useState();
 
@@ -79,8 +77,20 @@ function Home() {
     axios
       .get("http://localhost:80/api/readPatients.php", userId)
       .then((res) => {
-        let PatientData = res.data;
-        setDataPatient(PatientData);
+        let patientData = res.data;
+        setDataPatient(patientData);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:80/api/readRoom.php", userId)
+      .then((res) => {
+        let roomData = res.data;
+        setRoomData(roomData);
       })
       .catch((err) => {
         console.log(err);
@@ -100,7 +110,7 @@ function Home() {
         let data = res.data;
         let source = data[0].image;
         let renderPath = "http://localhost:80/api/" + source;
-        setRenderImage(renderPath);
+        // setRenderImage(renderPath);
         setReceptionist(data.map((item) => item.name));
         setReceptionistName(data.map((item) => item.name + " " + item.surname));
       });
@@ -142,26 +152,6 @@ function Home() {
     }
   };
 
-  const dateVal = (e) => {
-    const value = e.target.value;
-    setNewAppointment({ ...newAppointment, date: value });
-
-    // validate if the field is empty.
-    if (newAppointment.date !== "") {
-      setDateError();
-    }
-  };
-
-  const timeVal = (e) => {
-    const value = e.target.value;
-    setNewAppointment({ ...newAppointment, time: value });
-
-    // validate if the field is empty.
-    if (newAppointment.time !== "") {
-      setTimeError();
-    }
-  };
-
   const docVal = () => {
     const doctorName = selectedDoctor.current.value;
     setNewAppointment({ ...newAppointment, doctorName: doctorName });
@@ -185,8 +175,6 @@ function Home() {
   const addAppointment = (e) => {
     e.preventDefault();
     document.getElementById("patientName").value = "Select Patient";
-    document.getElementById("date").value = "";
-    document.getElementById("time").value = "";
     document.getElementById("doctor").value = "Select Doctor";
     document.getElementById("doctorsRoom").value = "Select Room";
 
@@ -194,6 +182,7 @@ function Home() {
       .post("http://localhost:80/api/addAppointment.php", newAppointment)
       .then((res) => {
         let data = res.data;
+        console.log(data);
         setRenderAppointment(true);
       });
   };
@@ -234,8 +223,7 @@ function Home() {
                 </option>
               ))}
             </select>
-            <input name="date" type="date" id="date" />
-            <input name="time" type="time" id="time" onChange={timeVal} />
+
             <select
               name="doctor"
               id="doctor"
@@ -254,6 +242,9 @@ function Home() {
               onChange={roomVal}
             >
               <option>Select Room</option>
+              {roomData.map((item) => (
+                <option key={item.id}>{item.room}</option>
+              ))}
             </select>
           </form>
           <Button

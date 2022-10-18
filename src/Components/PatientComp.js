@@ -1,20 +1,23 @@
 import React from "react";
+import { AiFillEdit } from "react-icons/ai";
+import { AiFillDelete } from "react-icons/ai";
+import "../CSS/Patients.css";
 
 function PatientComp(props) {
   return (
     <div>
       <>
         {/* {modal} */}
-        <div className="patientCard">
-          <div className="editPatient"></div>
-          <div className="deletePatient"></div>
+        <div className="pCard">
+          <AiFillEdit style={{ margin: "5%" }} />
+          <AiFillDelete style={{ float: "right", margin: "5%" }} />
           <div className="patientProfile">
             {/* <img src={renderPatientImage} className="patientImage" /> */}
           </div>
           <h4>
             {props.name} {props.surname}
           </h4>
-          <p id="medicalAidNo">{props.medicalAidNo}</p>
+          <p id="medicalAidNo">{props.medical_aid}</p>
           <hr />
           <p>
             <strong>Gender: </strong>

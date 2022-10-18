@@ -104,6 +104,7 @@ function Patients() {
       <div className="patients">
         <h4>Patients:</h4>
         <hr id="hrThree" />
+        {patients}
       </div>
     </>
   );
