@@ -52,43 +52,23 @@ function EditAppointment(props) {
 
   const [updatedAppointment, setUpdatedAppointment] = useState({
     id: props.id,
-    newPatient: props.originalPatientName,
-    newDate: props.originalDate,
-    newTime: props.originalTime,
-    newDoctor: props.originalDoctorName,
-    newRoom: props.originalRoom,
+    patient: props.originalName,
+    doctor: props.originalDocName,
+    room: props.originalRoom,
   });
-
-  useEffect(() => {
-    document.getElementById("patientName").innerHTML = props.originalName;
-    document.getElementById("date").innerHTML = props.originalDoctorName;
-    document.getElementById("doctor").innerHTML = props.originalRoom;
-    document.getElementById("doctorsRoom").innerHTML = props.originalDate;
-  }, []);
 
   const nameChangeVal = (e) => {
     let value = selectedPatient.current.value;
-    setUpdatedAppointment({ ...updatedAppointment, newPatient: value });
+    setUpdatedAppointment({ ...updatedAppointment, patient: value });
   };
 
-  const doctorChangeVal = () => {
+  const doctorChangeVal = (e) => {
     let newDoctor = selectedDoctor.current.value;
-    setUpdatedAppointment({ ...updatedAppointment, newDoctor: newDoctor });
+    setUpdatedAppointment({ ...updatedAppointment, doctor: newDoctor });
   };
-
-  const timeChangeVal = (e) => {
-    let value = e.target.value;
-    setUpdatedAppointment({ ...updatedAppointment, newTime: value });
-  };
-
-  const dateChangeVal = (e) => {
-    let value = e.target.value;
-    setUpdatedAppointment({ ...updatedAppointment, newDate: value });
-  };
-
-  const roomChangeVal = () => {
+  const roomChangeVal = (e) => {
     let newRoom = selectedRoom.current.value;
-    setUpdatedAppointment({ ...updatedAppointment, newRoom: newRoom });
+    setUpdatedAppointment({ ...updatedAppointment, room: newRoom });
   };
 
   const updateAppointment = () => {
@@ -120,46 +100,37 @@ function EditAppointment(props) {
         />
         <form
           className="editAppointments"
-          style={{ marginLeft: "50px", marginTop: "30px" }}
+          style={{ marginLeft: "10%", marginTop: "30px" }}
         >
-          <select
+          <input
             name="name"
             id="patientName"
+            placeholder="Patient"
+            defaultValue={props.originalName}
             ref={selectedPatient}
             onChange={nameChangeVal}
-          >
-            <option>Select Patient</option>
-            {dataPatient.map((item) => (
-              <option key={item.id}>
-                {item.name} {item.surname}
-              </option>
-            ))}
-          </select>
-          <input type="date" id="date" placeholder="date"></input>
-          <select
+          ></input>
+          <input
             name="doctor"
+            placeholder="Doctor"
             id="doctor"
+            defaultValue={props.originalDocName}
             ref={selectedDoctor}
             onChange={doctorChangeVal}
-          >
-            <option>Select Doctor</option>
-            {data.map((item) => (
-              <option key={item.id}>{item.surname}</option>
-            ))}
-          </select>
-          <select
+          ></input>
+          <input
             name="room"
             id="doctorsRoom"
+            placeholder="Room"
+            defaultValue={props.originalRoom}
             ref={selectedRoom}
             onChange={roomChangeVal}
-          >
-            <option>Select Room</option>
-            {roomData.map((item) => (
-              <option key={item.id}>{item.room}</option>
-            ))}
-          </select>
+          ></input>
         </form>
-        <button style={{ color: "white", border: "none" }}>
+        <button
+          style={{ color: "black", border: "none" }}
+          onClick={updateAppointment}
+        >
           Update Appointment
           <GrUpdate fontSize={"1rem"} style={{ marginLeft: "20px" }} />
         </button>

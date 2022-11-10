@@ -11,15 +11,13 @@
   opacity: 0.5;
 }
 .appointmentModal {
-  z-index: 1;
+  z-index: 9999;
   width: 60vw;
   height: 60vh;
   border-radius: 5px;
   background-color: white;
-  opacity: 0.9;
-  margin-left: 300px;
-  margin-top: 50px;
-  position: fixed;
+  margin-left: 280px;
+  position: absolute;
   color: #145567;
   box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
   -webkit-box-shadow: 10px 10px 30px -2px rgba(0, 0, 0, 0.43);
@@ -73,4 +71,7 @@ button {
   background-color: #145567;
   width: 50%;
   margin: auto;
+}
+#doctorsRoom {
+  text-align: center;
 }

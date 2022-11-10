@@ -35,7 +35,7 @@ function AppointmentsTable(props) {
         originalName={props.patient}
         originalSurname={props.date}
         originalDate={props.appointmentCreated}
-        originalDoctorName={props.doctorName}
+        originalDocName={props.doctor}
         originalRoom={props.room}
       />
     );

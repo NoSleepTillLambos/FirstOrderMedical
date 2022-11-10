@@ -12,16 +12,15 @@ Repository Information & Links
 <h6 align="center">DV200 - Term 2 Project | 2022</h6>
 </br>
 <p align="center">
-<img src="https://github.com/NoSleepTillLambos/LiamWedge_21100218_PsychologistApp/blob/master/src/Assets/ProjectLogo1.png" alt="App Logo" width="190" height="190">
+<img src="src/Assets/ProjectLogo1.png" alt="App Logo" width="190" height="190">
     
 </p>
 <!-- TABLE OF CONTENTS -->
 
 ## Table of Contents
 
-- The project is centred around PHP and MySQL, the receptionists on shfit have the ability to add and remove users to the database and make changes where they see fit
-such as the updating of appointments and addition of various docotors and patients
-  - [Project Description](The project was designed to help the receptionists maintain and navigate the site)
+- The project has been developed using MSQL, PHP and ReactJS for the frontend. It servers as a management portal and allows the head receptionist the ability to add and remove doctors and patients where they deem necessary.
+
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [How to install](#how-to-install)
@@ -44,11 +43,11 @@ such as the updating of appointments and addition of various docotors and patien
 
 <!-- header image of project -->
 
-![image1][image1]
+![image1](src/Assets/DisplayAllScreens.png)
 
 ### Project Description
 
-First order is an app designed for maintaining and organizing a website for a psychologists' practice.
+First order medical is an app designed for maintaining and organizing a psychologists practice, receptionists and control and run the site by conducting certain CRUD functionality such as adding appointments, doctors, patients etc
 
 ### Built With
 
@@ -57,7 +56,8 @@ First order is an app designed for maintaining and organizing a website for a ps
 - [PHP](https://www.php.net/docs.php)
 
 <!-- GETTING STARTED -->
-<!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
+<!-- Make sure to add appropriate information about what pre requesite technologies the user would need and also the steps to install your project on their own machines -->
+
 ## Features and Functionality
 
 <!-- note how you can use your gitHub link. Just make a path to your assets folder -->
@@ -66,7 +66,7 @@ First order is an app designed for maintaining and organizing a website for a ps
 
 ### Feature 2
 
-The features of this page include a dougnut chart, a bar graph displaying the market cap of the crpytocurrency's in question and finally a polar area graph displaying the total market caps
+The features of this page include a doughnut chart, a bar graph displaying the market cap of the Crpyto Currency's in question and finally a polar area graph displaying the total market caps
 
 ![image4][src/assets/4926360.png]
 
@@ -78,15 +78,8 @@ The features of this page include a dougnut chart, a bar graph displaying the ma
 
 ## Concept Process
 
-Pinterest was my main source for the ideation phase and development, the process began with wireframing and organizing the pages into what i felt would be the most user friendly.
-
-### Ideation
-
-<!-- DEVELOPMENT PROCESS -->
-
-## Development Process
-
-Users are able to cycle through various currencies on the comparison and timeline page and display data about the various object properties all with help of the Coinlore API.
+I took inspiration from pintrest as well as other dashboard designs i had seen when practicing React. Management portals needed to be
+clean and well thought out, by getting the nav off the page it kept the page a lot cleaner.
 
 ### Implementation Process
 
@@ -102,24 +95,6 @@ Users are able to cycle through various currencies on the comparison and timelin
 - The highlight for me was getting familiar with JSX and the other react syntax, it proved to be challenging but extremely
   worthwhile when everything came together.
 - I really enjoyed working with Chart js even though it proved to be an issue throughout, i really enjoyed the data visualization aspect.
-
-#### Challenges
-
-<!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
-
-- The biggest challenge for me was the dynamic population of data into the Charts, however I learnt quickly and was able to overcome
-  the issues.
-- There were a large amount of bugs that kept me awake most nights, mainly due to the syntax in React.
-
-#### Above And Beyond
-
-Going above and beyond the brief
-
-<!-- what did you learn outside of the classroom and implement into your project-->
-
-- I explored the use of Material UI as a way to implement a cleaner and more visually appealing front end .
-- Through the use of Coinponent I implemented a coin ticker bar.
-- Explain your understanding and execution of above skill.
 
 ### Future Implementation
 
@@ -145,7 +120,7 @@ Going above and beyond the brief
 
 To see a run through of the application, please click below:
 
-[View Demonstration](https://drive.google.com/drive/folders/1IiMC4ZpDRhs8Q5RuAk9rlZmzaHfeihNa)
+[View Demonstration](https://drive.google.com/drive/folders/1bHFGq7nIGPdDqJGrCNNCiSqTUyPk-h7F)
 
 See the [open issues](https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project/issues) for a list of proposed features (and known issues).
 
@@ -168,7 +143,6 @@ See the [open issues](https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV
 
 <!-- all resources that you used and Acknowledgements here -->
 
-- [PHP](https://www.coinlore.com/cryptocurrency-data-api)
-- [mySQL](https://coinponent.com/crypto-converter-widget)
-- [ReactBootstrap](https://reactjs.org/)
-
+- [PHP](https://www.php.net/)
+- [mySQL](https://www.mysql.com/)
+- [React](https://reactjs.org/)
