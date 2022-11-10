@@ -73,13 +73,13 @@ Ensure that you have the latest version of [NPM](https://www.npmjs.com/) install
 Here are a couple of ways to clone this repo:
 
 1.  GitHub Desktop </br>
-    Enter `https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project` into the URL field and press the `Clone` button.
+    Enter `https://github.com/NoSleepTillLambos/FirstOrderMedical` into the URL field and press the `Clone` button.
 
 2.  Clone Repository </br>
     Run the following in the command-line to clone the project:
 
     ```sh
-    git clone https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project
+    git clone https://github.com/NoSleepTillLambos/FirstOrderMedical
     ```
 
         Open `Software` and select `File | Open...` from the menu. Select cloned directory and press `Open` button
