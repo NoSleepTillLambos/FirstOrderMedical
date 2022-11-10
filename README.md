@@ -60,59 +60,30 @@ First order medical is an app designed for maintaining and organizing a psycholo
 
 ## Features and Functionality
 
-<!-- note how you can use your gitHub link. Just make a path to your assets folder -->
-
-![image2](src/Assets/Liam_Wedge_21100218_HomePage.png)
-
 ### Feature 2
 
-The features of this page include a doughnut chart, a bar graph displaying the market cap of the Crpyto Currency's in question and finally a polar area graph displaying the total market caps
+The landing page where receptionists can add appointments and assign doctors to those appointments in question.
 
-![image4][src/assets/4926360.png]
+![image4([src/Assets/landing.png)
 
-### Feature 3
-
-<!-- CONCEPT PROCESS -->
-<!-- Briefly explain your concept ideation process -->
-<!-- here you will add things like wireframing, data structure planning, anything that shows your process. You need to include images-->
-
-## Concept Process
+## Concept Process and road map
 
 I took inspiration from pintrest as well as other dashboard designs i had seen when practicing React. Management portals needed to be
 clean and well thought out, by getting the nav off the page it kept the page a lot cleaner.
+<br/>
+I wanted the website to be as 'real life' as possible, so my main aim was to maintain a high level regarding the UI and UX
 
-### Implementation Process
-
-<!-- stipulate all of the functionality you included in the project -->
-<!-- This is your time to shine, explain the technical nuances of your project, how did you achieve the final outcome!-->
-
--
-
-#### Highlights
-
-<!-- stipulated the highlight you experienced with the project -->
-
-- The highlight for me was getting familiar with JSX and the other react syntax, it proved to be challenging but extremely
-  worthwhile when everything came together.
-- I really enjoyed working with Chart js even though it proved to be an issue throughout, i really enjoyed the data visualization aspect.
-
-### Future Implementation
-
-<!-- stipulate functionality and improvements that can be implemented in the future. -->
-
-- In the future i would like to get my timeline page fully functioning as i was not quite able to complete it due to time restrictions
-- I would like to actually implement a way for users to access the blockchain (I'm aiming high) through my website and possibly even
-  make transactions, who knows :).
-
-<!-- MOCKUPS -->
+![image4](src/Assets/landing.png)
+![image4](src/Assets/landing.png)
+![image4](src/Assets/landing.png)
 
 ## Final Outcome
 
 ### Mockups
 
-![image2](src/Assets/Liam_Wedge_21100218_Mockup.png)
+![image2](src/Assets/LoginPage.png)
 <br>
-![image2](src/Assets/4926360.png)
+![image3](src/Assets/registerPage.png)
 
 <!-- VIDEO DEMONSTRATION -->
 
@@ -122,20 +93,20 @@ To see a run through of the application, please click below:
 
 [View Demonstration](https://drive.google.com/drive/folders/1bHFGq7nIGPdDqJGrCNNCiSqTUyPk-h7F)
 
-See the [open issues](https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/NoSleepTillLambos/FirstOrderMedical/issues) for a list of proposed features (and known issues).
 
 <!-- AUTHORS -->
 
 ## Authors
 
-- **Liam Wedge** - [LiamWedge](https://github.com/NoSleepTillLambos)
+- [LiamWedge](https://github.com/NoSleepTillLambos)
 
 <!-- LICENSE -->
 
 ## Contact
 
-- **Liam Wedge** - [21100218@virtualwindow.co.za]()
-- **Project Link** - https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project
+- **Liam Wedge** - [Liamwedge00@gmail.com]
+- **Project Link** - https://github.com/NoSleepTillLambos/FirstOrderMedical
 
 <!-- ACKNOWLEDGEMENTS -->
 
