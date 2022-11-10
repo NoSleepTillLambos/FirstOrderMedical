@@ -58,6 +58,41 @@ First order medical is an app designed for maintaining and organizing a psycholo
 <!-- GETTING STARTED -->
 <!-- Make sure to add appropriate information about what pre requesite technologies the user would need and also the steps to install your project on their own machines -->
 
+## Getting Started
+
+The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+Ensure that you have the latest version of [NPM](https://www.npmjs.com/) installed on your machine. The [GitHub Desktop](https://desktop.github.com/) program will also be required.
+
+### How to install
+
+### Installation
+
+Here are a couple of ways to clone this repo:
+
+1.  GitHub Desktop </br>
+    Enter `https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project` into the URL field and press the `Clone` button.
+
+2.  Clone Repository </br>
+    Run the following in the command-line to clone the project:
+
+    ```sh
+    git clone https://github.com/NoSleepTillLambos/21100218_LiamWedge_DV_project
+    ```
+
+        Open `Software` and select `File | Open...` from the menu. Select cloned directory and press `Open` button
+
+3.  Install Dependencies </br>
+    Run the following in the command-line to install all the required dependencies:
+
+    ```sh
+    npm install
+    ```
+
+4.  An API key is not required for this installation
+
 ## Features and Functionality
 
 ### Feature 2
