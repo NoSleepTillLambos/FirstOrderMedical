@@ -64,7 +64,7 @@ First order medical is an app designed for maintaining and organizing a psycholo
 
 The landing page where receptionists can add appointments and assign doctors to those appointments in question.
 
-![image4(src/Assets/landing.png)
+![image4](src/Assets/landing.png)
 
 ## Concept Process and road map
 
