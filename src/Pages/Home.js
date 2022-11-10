@@ -38,8 +38,6 @@ function Home() {
 
   const [newAppointment, setNewAppointment] = useState({
     patient: "",
-    date: "",
-    appointmentCreated: "",
     doctorName: "",
     room: "",
   });
@@ -174,9 +172,9 @@ function Home() {
 
   const addAppointment = (e) => {
     e.preventDefault();
-    document.getElementById("patientName").value = "Select Patient";
-    document.getElementById("doctor").value = "Select Doctor";
-    document.getElementById("doctorsRoom").value = "Select Room";
+    document.getElementById("patientName").value = "Patient Name";
+    document.getElementById("doctor").value = "Doctor Name";
+    document.getElementById("doctorsRoom").value = "";
 
     axios
       .post("http://localhost:80/api/addAppointment.php", newAppointment)
@@ -190,32 +188,25 @@ function Home() {
   return (
     <>
       <div>
-        <div>
+        <div className="appointmentsTbl">
           <img></img>
-          <h4 style={{ float: "left", marginLeft: "40px" }}>
-            Here are the appointments for today:
-          </h4>
+          <h4>Here are the appointments for today:</h4>
           {appointments}
         </div>
 
-        <div
-          className="home-element"
-          style={{ backgroundColor: "#145567", textAlign: "center" }}
-        >
+        <div className="home-element">
           <h2 style={{ marginTop: " 20px" }}>
             Add appointment <GiPsychicWaves />
           </h2>
           <hr id="hrTwo" />
 
           {/* ADDING */}
-          <form
-            className="addAppointments"
-            style={{ marginLeft: "50px", marginTop: "30px" }}
-          >
+          <form className="addAppointments">
             <select
               name="name"
               id="patientName"
               ref={selectedPatient}
+              placeholder="Patient name"
               onChange={patientNameVal}
             >
               <option>Select Patient</option>
@@ -228,56 +219,32 @@ function Home() {
 
             <select
               name="doctor"
-              id="doctor"
               ref={selectedDoctor}
+              id="doctor"
+              placeholder="Select Doctor"
               onChange={docVal}
             >
               <option>Select Doctor</option>
               {data.map((item) => (
                 <option key={item.id}>{item.surname}</option>
               ))}
+              {docError}
             </select>
-            <select
+            <input
               name="room"
               id="doctorsRoom"
               ref={selectedRoom}
               onChange={roomVal}
-            >
-              <option>Select Room</option>
-              {roomData.map((item) => (
-                <option key={item.id}>{item.room}</option>
-              ))}
-            </select>
+              placeholder="Room number"
+            ></input>
           </form>
-          <Button
-            style={{
-              margin: "auto",
-              marginTop: "80px",
-              height: "50px",
-              backgroundColor: "white",
-              color: "#145567",
-            }}
-            onClick={addAppointment}
-          >
+          <Button id="addAppointment" onClick={addAppointment}>
             Add appointment <AiOutlineUserAdd />
           </Button>
         </div>
       </div>
 
-      <div
-        className="add-appointment"
-        style={{
-          marginTop: "-80px",
-          float: "right",
-          width: "50%",
-          marginRight: "40px",
-          backgroundColor: "#145567",
-          borderRadius: "10px",
-          zIndex: 1,
-          height: "40vh",
-          color: "white",
-        }}
-      >
+      <div className="add-appointment">
         <h2 style={{ marginTop: " 20px", textAlign: "center" }}>
           Receptionist on shift <MdOutlineWorkOutline />
         </h2>
@@ -287,21 +254,7 @@ function Home() {
         <p style={{ marginLeft: "30px" }}>
           You can find the appointments for today on the left
         </p>
-        <button
-          style={{
-            float: "right",
-            marginTop: "30px",
-            outline: "white",
-            border: "none",
-            color: "#145567",
-            marginRight: "20px",
-            width: " 100px",
-            height: "50px",
-            borderRadius: "5px",
-            backgroundColor: "white",
-          }}
-          onClick={setLogout}
-        >
+        <button id="logout" onClick={setLogout}>
           Logout <BiIcons.BiLogOut />
         </button>
       </div>

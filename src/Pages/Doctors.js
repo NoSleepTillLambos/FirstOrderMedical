@@ -9,6 +9,7 @@ import DoctorComp from "../Components/DoctorComp";
 import axios from "axios";
 
 function Doctors() {
+  const styles = { backgroundColor: "white", height: "50px" };
   const navigate = useNavigate();
 
   const [modal, setModal] = useState();
@@ -38,6 +39,23 @@ function Doctors() {
     gender: "",
   });
 
+  const imageVal = (e) => {
+    let file = e.target.files[0];
+    let reader = new FileReader();
+
+    reader.onloadend = function () {
+      console.log(reader.result);
+      let imgFile = reader.result;
+
+      setValues({ ...values, image: imgFile });
+
+      let image = new Image();
+      image.src = reader.result;
+      document.getElementById("profileImg").appendChild(image);
+    };
+    reader.readAsDataURL(file);
+  };
+
   const nameVal = (e) => {
     const value = e.target.value;
     setValues({ ...values, name: value });
@@ -58,9 +76,9 @@ function Doctors() {
     setValues({ ...values, gender: value });
   };
 
-  const cellVal = (e) => {
+  const contactVal = (e) => {
     const value = e.target.value;
-    setValues({ ...values, cellNo: value });
+    setValues({ ...values, contact: value });
   };
 
   const emailVal = (e) => {
@@ -102,7 +120,7 @@ function Doctors() {
   }, [renderDoctors]);
 
   const addDoctor = () => {
-    document.getElementById("name").value = "";
+    document.getElementById("patientName").value = "";
     document.getElementById("surname").value = "";
     document.getElementById("email").value = "";
     document.getElementById("contact").value = "";
@@ -122,10 +140,22 @@ function Doctors() {
       <div className="add-doctor">
         <h3 style={{ color: "white" }}>
           Add Psychologist
-          <img src={doctor} alt={doctor} className="doctor-img"></img>
+          <div
+            src={doctor}
+            alt={doctor}
+            id="profileImg"
+            className="doctor-img"
+          ></div>
         </h3>
         <hr id="hrTwo" />
         <form style={{ marginLeft: "60px", marginTop: "50px" }}>
+          <input
+            name="imageUrl"
+            id="imgInput"
+            className="imgInput"
+            type="file"
+            onChange={imageVal}
+          />
           <input
             type="text"
             id="patientName"
@@ -139,17 +169,35 @@ function Doctors() {
             placeholder="surname"
           />
           <input type="number" id="age" placeholder="age" onChange={ageVal} />
-          <select name="doctor" id="doctor">
-            <option>Select Doctor</option>
-          </select>
-          <select name="room" id="doctorsRoom">
-            <option>Select Room</option>
-          </select>
+          <input
+            type="text"
+            id="email"
+            placeholder="email"
+            onChange={emailVal}
+          />
+          <input
+            type="text"
+            id="gender"
+            placeholder="Gender"
+            onChange={genderVal}
+          />
+          <input
+            type="text"
+            id="contact"
+            placeholder="contact"
+            onChange={contactVal}
+          />
+          <input
+            type="text"
+            id="password"
+            placeholder="Password"
+            onChange={passwordVal}
+          />
         </form>
         <Button
           style={{
-            height: "70px",
-            marginTop: "90px",
+            height: "50px",
+            width: "37%",
             backgroundColor: "white",
             color: "#145567",
           }}
@@ -158,7 +206,7 @@ function Doctors() {
           Add Psychologist <AiOutlineUserAdd />
         </Button>
       </div>
-      <div class="data-container">
+      <div className="data-container">
         <h3 style={{ textAlign: "center", marginTop: "20px" }}>
           Psychologists:
         </h3>

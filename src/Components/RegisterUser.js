@@ -232,6 +232,10 @@ function Register() {
     }
   };
 
+  const backToLogin = () => {
+    navigate("/Login");
+  };
+
   return (
     <>
       <h3 style={{ textAlign: "center" }}>
@@ -336,6 +340,12 @@ function Register() {
           >
             Register
           </Button>
+          <p
+            onClick={backToLogin}
+            style={{ float: "right", paddingTop: "12px", cursor: "pointer" }}
+          >
+            Already have an account? <u>Login</u>
+          </p>
         </Form>
       </div>
 
