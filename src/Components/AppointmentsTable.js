@@ -47,11 +47,11 @@ function AppointmentsTable(props) {
       <div className="appointments-tbl">
         <p style={{ float: "left" }}>
           <strong>Patient: </strong>
-          {props.patientName}
+          {props.patient}
         </p>
         <p>
           <strong>Doctor: </strong>
-          {props.doctorName}
+          {props.doctor}
         </p>
         <p>
           <strong>Time created: </strong>

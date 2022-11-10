@@ -29,8 +29,6 @@ function Doctors() {
   const [doctors, setDoctors] = useState();
 
   const [values, setValues] = useState({
-    image: "",
-    name: "",
     surname: "",
     email: "",
     contact: "",
@@ -38,23 +36,6 @@ function Doctors() {
     age: "",
     gender: "",
   });
-
-  const imageVal = (e) => {
-    let file = e.target.files[0];
-    let reader = new FileReader();
-
-    reader.onloadend = function () {
-      console.log(reader.result);
-      let imgFile = reader.result;
-
-      setValues({ ...values, image: imgFile });
-
-      let image = new Image();
-      image.src = reader.result;
-      document.getElementById("profileImg").appendChild(image);
-    };
-    reader.readAsDataURL(file);
-  };
 
   const nameVal = (e) => {
     const value = e.target.value;
@@ -120,7 +101,6 @@ function Doctors() {
   }, [renderDoctors]);
 
   const addDoctor = () => {
-    document.getElementById("patientName").value = "";
     document.getElementById("surname").value = "";
     document.getElementById("email").value = "";
     document.getElementById("contact").value = "";
@@ -149,19 +129,6 @@ function Doctors() {
         </h3>
         <hr id="hrTwo" />
         <form style={{ marginLeft: "60px", marginTop: "50px" }}>
-          <input
-            name="imageUrl"
-            id="imgInput"
-            className="imgInput"
-            type="file"
-            onChange={imageVal}
-          />
-          <input
-            type="text"
-            id="patientName"
-            placeholder="name"
-            onChange={nameVal}
-          ></input>
           <input
             type="text"
             id="surname"

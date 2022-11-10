@@ -6,6 +6,7 @@ import patientPng from "../Assets/patients.png";
 import { FaRegAddressCard } from "react-icons/fa";
 import { Button } from "react-bootstrap";
 import axios from "axios";
+import doctor from "../Assets/doctor.png";
 import PatientComp from "../Components/PatientComp";
 
 function Patients() {
@@ -18,7 +19,7 @@ function Patients() {
   const [patients, setPatients] = useState();
 
   const [inputs, setInputs] = useState({
-    // image: "",
+    image: "",
     name: "",
     surname: "",
     age: "",
@@ -28,6 +29,23 @@ function Patients() {
     password: "",
     medicalAid: "",
   });
+
+  const imageVal = (e) => {
+    let file = e.target.files[0];
+    let reader = new FileReader();
+
+    reader.onloadend = function () {
+      console.log(reader.result);
+      let imgFile = reader.result;
+
+      setInputs({ ...inputs, image: imgFile });
+
+      let image = new Image();
+      image.src = reader.result;
+      document.getElementById("profileImg").appendChild(image);
+    };
+    reader.readAsDataURL(file);
+  };
 
   const nameVal = (e) => {
     const value = e.target.value;
@@ -51,7 +69,7 @@ function Patients() {
 
   const contactVal = (e) => {
     const value = e.target.value;
-    setInputs({ ...inputs, cellNo: value });
+    setInputs({ ...inputs, contact: value });
   };
 
   const emailVal = (e) => {
@@ -96,7 +114,7 @@ function Patients() {
             medicalAidNo={item.medicalAidNo}
             gender={item.gender}
             age={item.age}
-            contact={item.cellNo}
+            contact={item.contact}
           />
         ));
         console.log(res);
@@ -136,9 +154,22 @@ function Patients() {
 
         <div className="add-patients">
           <h4>Add a patient</h4>
-          <FaRegAddressCard />
+
           <hr id="hrTwo" />
-          <form style={{ margin: "auto", marginTop: "3%" }}>
+          <div
+            src={doctor}
+            alt={doctor}
+            id="profileImg"
+            className="doctor-img"
+          ></div>
+          <form style={{ marginTop: "-2%" }}>
+            <input
+              name="imageUrl"
+              id="imgInput"
+              className="imgInput"
+              type="file"
+              onChange={imageVal}
+            />
             <input
               type="text"
               id="patientName"

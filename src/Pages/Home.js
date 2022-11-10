@@ -38,7 +38,7 @@ function Home() {
 
   const [newAppointment, setNewAppointment] = useState({
     patient: "",
-    doctorName: "",
+    doctor: "",
     room: "",
   });
 
@@ -125,9 +125,9 @@ function Home() {
             key={item.id}
             rerender={setRenderAppointment}
             uniqueId={item.id}
-            patientName={item.patient}
-            doctorName={item.doctor}
+            patient={item.patient}
             appointmentCreated={item.created_at}
+            doctor={item.doctor}
             room={item.room}
           />
         ));
@@ -142,21 +142,21 @@ function Home() {
 
   const patientNameVal = () => {
     const patientName = selectedPatient.current.value;
-    setNewAppointment({ ...newAppointment, patientName: patientName });
+    setNewAppointment({ ...newAppointment, patient: patientName });
 
     // validate if the field is empty.
     if (newAppointment.patientName !== "") {
-      setNameError();
+      setNameError("Please fill out this space");
     }
   };
 
   const docVal = () => {
     const doctorName = selectedDoctor.current.value;
-    setNewAppointment({ ...newAppointment, doctorName: doctorName });
+    setNewAppointment({ ...newAppointment, doctor: doctorName });
 
     // validate if the field is empty.
-    if (newAppointment.doc !== "") {
-      setDocError();
+    if (newAppointment.doc == "") {
+      setDocError("This form needs to be filled out");
     }
   };
 
@@ -172,8 +172,8 @@ function Home() {
 
   const addAppointment = (e) => {
     e.preventDefault();
-    document.getElementById("patientName").value = "Patient Name";
-    document.getElementById("doctor").value = "Doctor Name";
+    document.getElementById("patientName").value = "";
+    document.getElementById("doctor").value = "";
     document.getElementById("doctorsRoom").value = "";
 
     axios
@@ -202,37 +202,29 @@ function Home() {
 
           {/* ADDING */}
           <form className="addAppointments">
-            <select
+            <input
+              type="text"
               name="name"
               id="patientName"
               ref={selectedPatient}
               placeholder="Patient name"
               onChange={patientNameVal}
-            >
-              <option>Select Patient</option>
-              {dataPatient.map((item) => (
-                <option key={item.id}>
-                  {item.name} {item.surname}
-                </option>
-              ))}
-            </select>
+            ></input>
 
-            <select
+            <input
               name="doctor"
-              ref={selectedDoctor}
+              type="text"
               id="doctor"
               placeholder="Select Doctor"
+              ref={selectedDoctor}
               onChange={docVal}
             >
-              <option>Select Doctor</option>
-              {data.map((item) => (
-                <option key={item.id}>{item.surname}</option>
-              ))}
               {docError}
-            </select>
+            </input>
             <input
               name="room"
               id="doctorsRoom"
+              type="number"
               ref={selectedRoom}
               onChange={roomVal}
               placeholder="Room number"

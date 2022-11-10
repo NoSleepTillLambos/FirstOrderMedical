@@ -11,6 +11,7 @@ function PatientComp(props) {
   const navigate = useNavigate();
 
   const [modal, setModal] = useState();
+  const [renderPImage, setRenderPImage] = useState();
 
   useEffect(() => {
     const userSession = sessionStorage.getItem("activeUser");
@@ -18,18 +19,19 @@ function PatientComp(props) {
       navigate("/");
     }
 
-    // let patientId = {id: props.uniqueId};
-    // axios.post('http://localhost:80/api/readPatientProfile.php', patientId)
-    // .then((res)=>{
-    //     let data = res.data;
-    //     let source = data[0].image;
-    //     let renderPath = 'http://localhost:80/api/' + source;
-    //     setRenderPatientImage(renderPath);
-    //     console.log(renderPath);
-    // })
-    // .catch(err=>{
-    //     console.log(err);
-    // })
+    let patientId = { id: props.uniqueId };
+    axios
+      .post("http://localhost:80/api/readPatientProf.php", patientId)
+      .then((res) => {
+        let data = res.data;
+        let source = data[0].image;
+        let renderPath = "http://localhost:80/api/" + source;
+        setRenderPImage(renderPath);
+        console.log(renderPath);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   const editPatient = () => {
@@ -38,13 +40,13 @@ function PatientComp(props) {
         id={props.uniqueId}
         upRender={props.rerender}
         rerender={setModal}
-        origionalName={props.name}
-        origionalSurname={props.surname}
-        origionalAge={props.age}
-        origionalGender={props.gender}
-        origionalCell={props.cellNo}
-        origionalEmail={props.email}
-        origionalSpecialization={props.specialization}
+        originalName={props.name}
+        originalSurname={props.surname}
+        originalAge={props.age}
+        originalGender={props.gender}
+        originalCell={props.contact}
+        originalEmail={props.email}
+        originalSpecialization={props.specialization}
       />
     );
   };
@@ -76,6 +78,7 @@ function PatientComp(props) {
           style={{ float: "right", margin: "5%" }}
           onClick={deletePatient}
         />
+        <img src={renderPImage}></img>
         <div className="patientProfile">
           {/* <img src={renderPatientImage} className="patientImage" /> */}
         </div>
