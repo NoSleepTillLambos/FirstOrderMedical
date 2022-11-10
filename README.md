@@ -73,9 +73,9 @@ clean and well thought out, by getting the nav off the page it kept the page a l
 <br/>
 I wanted the website to be as 'real life' as possible, so my main aim was to maintain a high level regarding the UI and UX
 
-![image4](src/Assets/landing.png)
-![image4](src/Assets/landing.png)
-![image4](src/Assets/landing.png)
+![image4](src/Assets/wireframe1.png)
+![image4](src/Assets/wireframe2.png)
+![image4](src/Assets/wireframe3.png)
 
 ## Final Outcome
 
